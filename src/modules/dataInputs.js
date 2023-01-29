@@ -1,9 +1,20 @@
 const UI = () => {
-  const body = document.querySelector('body');
+    const body = document.querySelector('body');
 
-  return {
-    body
-  }
+    return {
+        body
+    }
 }
 
-export { UI };
+const DATA = () => {
+    const nameBook = document.querySelector('#nameBook').value;
+    const authorBook = document.querySelector('#authorBook').value;
+    const staringDate = document.querySelector('#initialDate').value;
+    const finishingDate = document.querySelector('#finalDate').value;
+
+    return{
+        nameBook, authorBook, staringDate, finishingDate
+    }
+}
+
+export { UI, DATA };
