@@ -59,17 +59,20 @@ const form = function CreateAFormForAddTheBook(){
     finalDate.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
     liFromFour.appendChild(finalDate);
 
+    const liFormBtn = createElements('li');
     const btnFormSave = createElements('button', '', ['buttons'], 'button', 'Save');
     const btnFormCancel = createElements('button', '', ['buttons'], 'button', 'Cancel');
+    liFormBtn.appendChild(btnFormSave);
+    liFormBtn.appendChild(btnFormCancel);
 
     ulForm.appendChild(liFormOne);
     ulForm.appendChild(liFormTwo);
     ulForm.appendChild(liFromThree);
     ulForm.appendChild(liFromFour);
+    ulForm.appendChild(liFormBtn);
 
     form.appendChild(ulForm);
-    form.appendChild(btnFormSave);
-    form.appendChild(btnFormCancel);
+
 
     fieldset.appendChild(legend);
     fieldset.appendChild(form);
