@@ -80,6 +80,24 @@ const form = function CreateAFormForAddTheBook(){
     return fieldset;
 }
 
+const bookTable = function createATableToShowTheBooks(){
+    const tableMain = createElements('div', 'tableMain');
+
+    const header = createElements('div', 'tableHeader');
+    const headerTitle = createElements('div', 'headerTitle', 'headerItems');
+    const headerAuthor = createElements('div', 'headerAuthor', 'headerItems');
+    const headerStarDate = createElements('div', 'headerStarDate', 'headerItems');
+    const headerFinishDate = createElements('div', 'headerFinishDate', 'headerItems');
+
+    header.appendChild(headerTitle);
+    header.appendChild(headerAuthor);
+    header.appendChild(headerStarDate);
+    header.appendChild(headerFinishDate);
+
+    tableMain.appendChild(header);
+
+}
+
 const basicElementBody = () => {
     const { body } = UI();
 
