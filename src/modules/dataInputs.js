@@ -7,13 +7,13 @@ const UI = () => {
 }
 
 const DATA = () => {
-    const nameBook = document.querySelector('#nameBook').value;
-    const authorBook = document.querySelector('#authorBook').value;
-    const staringDate = document.querySelector('#initialDate').value;
-    const finishingDate = document.querySelector('#finalDate').value;
+    const title = document.querySelector('#nameBook').value;
+    const author = document.querySelector('#authorBook').value;
+    const startDate = document.querySelector('#initialDate').value;
+    const finishDate = document.querySelector('#finalDate').value;
 
     return{
-        nameBook, authorBook, staringDate, finishingDate
+        title, author, startDate, finishDate
     }
 }
 

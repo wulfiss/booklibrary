@@ -18,7 +18,8 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
     const { btnSave, btnCancel } = BTN();
 
     btnSave.addEventListener('click', (e) => {
-        console.log(1);
+        const { title, author, startDate, finishDate } = DATA();
+        arrToJson(Books(title, author, startDate, finishDate));
     })
 };
 
