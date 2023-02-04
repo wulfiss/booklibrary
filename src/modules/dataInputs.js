@@ -17,4 +17,12 @@ const DATA = () => {
     }
 }
 
-export { UI, DATA };
+const BTN = () => {
+    const btnSave = document.querySelector('#btnSave');
+    const btnCancel = document.querySelector('#btnCancel');
+
+    return{
+        btnSave, btnCancel
+    }
+}
+export { UI, DATA, BTN };

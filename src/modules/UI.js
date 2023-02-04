@@ -60,8 +60,8 @@ const form = function CreateAFormForAddTheBook(){
     liFromFour.appendChild(finalDate);
 
     const liFormBtn = createElements('li');
-    const btnFormSave = createElements('button', '', ['buttons'], 'button', 'Save');
-    const btnFormCancel = createElements('button', '', ['buttons'], 'button', 'Cancel');
+    const btnFormSave = createElements('button', 'btnSave', ['buttons'], 'button', 'Save');
+    const btnFormCancel = createElements('button', 'btnCancel', ['buttons'], 'button', 'Cancel');
     liFormBtn.appendChild(btnFormSave);
     liFormBtn.appendChild(btnFormCancel);
 
