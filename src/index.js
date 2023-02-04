@@ -1,6 +1,6 @@
 import 'normalize.css';
 import './style.scss';
-import { basicElementBody } from './modules/UI';
+import { basicElementBody } from './modules/UI.js';
 
 
 basicElementBody();
