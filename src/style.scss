@@ -18,6 +18,7 @@ div#tableHeader{
     grid-template-columns: repeat(4, 1fr);
 }
 
-div.headerItems{
-
+div.bookItems{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

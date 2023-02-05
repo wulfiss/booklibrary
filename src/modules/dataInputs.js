@@ -7,13 +7,14 @@ const UI = () => {
 }
 
 const DATA = () => {
+    const arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
     const title = document.querySelector('#nameBook').value;
     const author = document.querySelector('#authorBook').value;
     const startDate = document.querySelector('#initialDate').value;
     const finishDate = document.querySelector('#finalDate').value;
 
     return{
-        title, author, startDate, finishDate
+        arrBooks, title, author, startDate, finishDate
     }
 }
 

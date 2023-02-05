@@ -1,11 +1,22 @@
 import { BTN, DATA } from "./dataInputs";
 
-const Books = (title, author, startDate, finishDate, state) => ({
+/* const Books = (title, author, startDate, finishDate, state) => ({
     title, author, startDate, finishDate, state
-});
+}); */
+
+const Books = (title, author, startDate, finishDate, status) => {
+    if(title === ''){ title = '---'}
+    if(author === ''){ author = '---'}
+    if(startDate === ''){ startDate = '---'}
+    if(finishDate === ''){ finishDate = '---'}
+
+    return{
+        title, author, startDate, finishDate
+    }
+}
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
-    let arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
+    let { arrBooks } = DATA();
 
     if(!arrBooks){arrBooks = [];}
     arrBooks.push(book);
