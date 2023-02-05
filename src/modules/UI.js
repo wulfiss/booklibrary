@@ -84,10 +84,10 @@ const bookTable = function createATableToShowTheBooks(){
     const tableMain = createElements('div', 'tableMain');
 
     const header = createElements('div', 'tableHeader');
-    const headerTitle = createElements('div', 'headerTitle', 'headerItems');
-    const headerAuthor = createElements('div', 'headerAuthor', 'headerItems');
-    const headerStarDate = createElements('div', 'headerStarDate', 'headerItems');
-    const headerFinishDate = createElements('div', 'headerFinishDate', 'headerItems');
+    const headerTitle = createElements('div', 'headerTitle', 'headerItems', '','Title');
+    const headerAuthor = createElements('div', 'headerAuthor', 'headerItems', '', 'Author');
+    const headerStarDate = createElements('div', 'headerStarDate', 'headerItems', '', 'Start date');
+    const headerFinishDate = createElements('div', 'headerFinishDate', 'headerItems', '', 'Finish date');
 
     header.appendChild(headerTitle);
     header.appendChild(headerAuthor);
@@ -96,6 +96,7 @@ const bookTable = function createATableToShowTheBooks(){
 
     tableMain.appendChild(header);
 
+    return tableMain;
 }
 
 const basicElementBody = () => {
@@ -104,6 +105,7 @@ const basicElementBody = () => {
     const header =  createElements('header');
     const main = createElements('main');
     main.appendChild(form());
+    main.appendChild(bookTable());
     const footer = createElements('footer');
 
     body.appendChild(header);
