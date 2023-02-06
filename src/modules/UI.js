@@ -128,7 +128,7 @@ const bookTable = () => {
 }
 
 const basicElementBody = () => {
-    const { body, table } = UI();
+    const { body } = UI();
 
     const header =  createElements('header');
     const main = createElements('main');

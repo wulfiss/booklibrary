@@ -1,10 +1,6 @@
 import { BTN, DATA, UI } from "./dataInputs";
 import { showTableContent } from "./UI";
 
-/* const Books = (title, author, startDate, finishDate, state) => ({
-    title, author, startDate, finishDate, state
-}); */
-
 const Books = (title, author, startDate, finishDate, status) => {
     if(title === ''){ title = '---'}
     if(author === ''){ author = '---'}
