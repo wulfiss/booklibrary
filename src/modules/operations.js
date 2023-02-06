@@ -1,4 +1,5 @@
-import { BTN, DATA } from "./dataInputs";
+import { BTN, DATA, UI } from "./dataInputs";
+import { showTableContent } from "./UI";
 
 /* const Books = (title, author, startDate, finishDate, state) => ({
     title, author, startDate, finishDate, state
@@ -25,12 +26,19 @@ const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNo
     return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
+const updateBookTable = () => {
+    const { tableMain, tableContent } = UI();
+    tableContent.remove();
+    tableMain.appendChild(showTableContent());
+}
+
 const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
     const { btnSave, btnCancel } = BTN();
 
     btnSave.addEventListener('click', (e) => {
         const { title, author, startDate, finishDate } = DATA();
         arrToJson(Books(title, author, startDate, finishDate));
+        updateBookTable();
     })
 };
 

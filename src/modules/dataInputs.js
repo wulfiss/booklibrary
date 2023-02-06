@@ -1,8 +1,10 @@
 const UI = () => {
     const body = document.querySelector('body');
+    const tableContent = document.querySelector('#tableContent');
+    const tableMain = document.querySelector('#tableMain');
 
     return {
-        body
+        body, tableMain, tableContent
     }
 }
 

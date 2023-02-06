@@ -80,72 +80,60 @@ const form = function CreateAFormForAddTheBook(){
     return fieldset;
 }
 
-const bookTable = function createATableToShowTheBooks(){
+const showTableContent = () => {
+    const content = createElements('div', 'tableContent');
+    const arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
 
+    if(arrBooks){
+        for(let i = 0; i < arrBooks.length; i += 1){
+            const bookItem = createElements('div', '', ['bookItems']);
+            bookItem.dataset.book = i;
+
+            const bookItemTitle = createElements('div', 'bookItemTitle', ['bookSubItems'], '', `${arrBooks[i]['title']}`);
+            const bookItemAuthor = createElements('div', 'bookItemAuthor', ['bookSubItems'], '', `${arrBooks[i]['author']}`);
+            const bookItemStartDate = createElements('div', 'bookItemStartDate', ['bookSubItems'], '', `${arrBooks[i]['startDate']}`);
+            const bookItemFinishDate = createElements('div', 'bookItemFinishDate', ['bookSubItems'], '', `${arrBooks[i]['finishDate']}`);
+
+            bookItem.appendChild(bookItemTitle);
+            bookItem.appendChild(bookItemAuthor);
+            bookItem.appendChild(bookItemStartDate);
+            bookItem.appendChild(bookItemFinishDate);
+
+            content.appendChild(bookItem);
+        }
+    }
+
+    return content;
+
+}
+
+const bookTable = () => {
     const tableMain = createElements('div', 'tableMain');
 
-    const header = () => {
-        //const tableMain = createElements('div', 'tableMain');
+    const header = createElements('div', 'tableHeader');
+    const headerTitle = createElements('div', 'headerTitle', ['headerItems'], '','Title');
+    const headerAuthor = createElements('div', 'headerAuthor', ['headerItems'], '', 'Author');
+    const headerStarDate = createElements('div', 'headerStarDate', ['headerItems'], '', 'Start date');
+    const headerFinishDate = createElements('div', 'headerFinishDate', ['headerItems'], '', 'Finish date');
 
-        const header = createElements('div', 'tableHeader');
-        const headerTitle = createElements('div', 'headerTitle', ['headerItems'], '','Title');
-        const headerAuthor = createElements('div', 'headerAuthor', ['headerItems'], '', 'Author');
-        const headerStarDate = createElements('div', 'headerStarDate', ['headerItems'], '', 'Start date');
-        const headerFinishDate = createElements('div', 'headerFinishDate', ['headerItems'], '', 'Finish date');
+    header.appendChild(headerTitle);
+    header.appendChild(headerAuthor);
+    header.appendChild(headerStarDate);
+    header.appendChild(headerFinishDate);
 
-        header.appendChild(headerTitle);
-        header.appendChild(headerAuthor);
-        header.appendChild(headerStarDate);
-        header.appendChild(headerFinishDate);
+    tableMain.appendChild(header);
+    tableMain.appendChild(showTableContent());
 
-        tableMain.appendChild(header);
-
-        return tableMain;
-    }
-
-    const tableContent = () => {
-        //const { arrBooks } = DATA();
-        const arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
-        const content = createElements('div', 'tableContent');
-
-        if(arrBooks){
-
-            for(let i = 0; i < arrBooks.length; i += 1){
-                const bookItem = createElements('div', '', ['bookItems']);
-                bookItem.dataset.book = i;
-
-                const bookItemTitle = createElements('div', 'bookItemTitle', ['bookSubItems'], '', `${arrBooks[i]['title']}`);
-                const bookItemAuthor = createElements('div', 'bookItemAuthor', ['bookSubItems'], '', `${arrBooks[i]['author']}`);
-                const bookItemStartDate = createElements('div', 'bookItemStartDate', ['bookSubItems'], '', `${arrBooks[i]['startDate']}`);
-                const bookItemFinishDate = createElements('div', 'bookItemFinishDate', ['bookSubItems'], '', `${arrBooks[i]['finishDate']}`);
-
-                bookItem.appendChild(bookItemTitle);
-                bookItem.appendChild(bookItemAuthor);
-                bookItem.appendChild(bookItemStartDate);
-                bookItem.appendChild(bookItemFinishDate);
-
-                content.appendChild(bookItem);
-            }
-        }
-
-        tableMain.appendChild(content);
-
-        return tableMain;
-    }
-
-    return {
-        header, tableContent
-    }
+    return tableMain;
 }
 
 const basicElementBody = () => {
-    const { body } = UI();
+    const { body, table } = UI();
 
     const header =  createElements('header');
     const main = createElements('main');
     main.appendChild(form());
-    main.appendChild(bookTable().header());
-    main.appendChild(bookTable().tableContent());
+    main.appendChild(bookTable());
     const footer = createElements('footer');
 
     body.appendChild(header);
@@ -155,4 +143,4 @@ const basicElementBody = () => {
     return body;
 }
 
-export { basicElementBody };
+export { basicElementBody, showTableContent };
