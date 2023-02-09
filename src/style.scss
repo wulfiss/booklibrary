@@ -21,4 +21,9 @@ div#tableHeader{
 div.bookItems{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    &:hover, &:focus{
+        background-color: rgba(70, 107, 226, 0.459);
+        border: 1px solid #000;
+    }
 }

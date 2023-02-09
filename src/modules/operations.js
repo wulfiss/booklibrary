@@ -38,4 +38,12 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
     })
 };
 
-export{ btnForm };
+const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
+    const { bookItems } = UI();
+
+    bookItems.addEventListener('dblclick', (e) => {
+        console.log(1);
+    })
+}
+
+export{ btnForm, clickOnBook };

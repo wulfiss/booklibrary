@@ -30,6 +30,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "googleapi": "^1.0.2",
     "normalize.css": "^8.0.1"
   }
 }
