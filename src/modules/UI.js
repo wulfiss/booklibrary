@@ -127,6 +127,24 @@ const bookTable = () => {
     return tableMain;
 }
 
+const windowInfo = () => {
+    const mainInfoDiv = createElements('div', 'mainInfoDiv');
+
+    const ulInfoDiv = createElements('ul');
+
+    const liInfoOne = createElements('li');
+    const titleInfo = createElements('p', 'titleInfo','','','Title');
+    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','','Example');
+
+    liInfoOne.appendChild(titleInfo);
+    liInfoOne.appendChild(titleInfoSpan);
+    ulInfoDiv.appendChild(liInfoOne);
+
+    mainInfoDiv.appendChild(ulInfoDiv);
+
+    return mainInfoDiv
+}
+
 const basicElementBody = () => {
     const { body } = UI();
 
@@ -143,4 +161,4 @@ const basicElementBody = () => {
     return body;
 }
 
-export { basicElementBody, showTableContent };
+export { basicElementBody, showTableContent, windowInfo };

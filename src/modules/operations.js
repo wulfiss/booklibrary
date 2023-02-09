@@ -1,5 +1,5 @@
 import { BTN, DATA, UI } from "./dataInputs";
-import { showTableContent } from "./UI";
+import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
     if(title === ''){ title = '---'}
@@ -39,9 +39,10 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
 };
 
 const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
-    const { bookItems } = UI();
+    const { bookItems, tableMain } = UI();
 
     bookItems.addEventListener('dblclick', (e) => {
+        tableMain.appendChild(windowInfo());
         console.log(1);
     })
 }
