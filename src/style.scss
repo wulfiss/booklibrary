@@ -27,3 +27,7 @@ div.bookItems{
         border: 1px solid #000;
     }
 }
+
+div.bookSubItems{
+    pointer-events: none; // Avoid the child el being call when the event listener is in parent.
+}

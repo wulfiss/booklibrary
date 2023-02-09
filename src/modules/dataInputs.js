@@ -1,11 +1,12 @@
 const UI = () => {
     const body = document.querySelector('body');
+    const main = document.querySelector('main');
     const tableContent = document.querySelector('#tableContent');
     const tableMain = document.querySelector('#tableMain');
     const bookItems = document.querySelector('.bookItems');
 
     return {
-        body, tableMain, tableContent, bookItems
+        body, main, tableMain, tableContent, bookItems
     }
 }
 

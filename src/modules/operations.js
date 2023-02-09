@@ -39,11 +39,11 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
 };
 
 const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
-    const { bookItems, tableMain } = UI();
+    const { bookItems, tableContent, main } = UI();
 
-    bookItems.addEventListener('dblclick', (e) => {
-        tableMain.appendChild(windowInfo());
-        console.log(1);
+    tableContent.addEventListener('dblclick', (e) => {
+        main.appendChild(windowInfo(e.target.dataset.book));
+        console.log(e.target.dataset.book)
     })
 }
 

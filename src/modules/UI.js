@@ -86,7 +86,7 @@ const showTableContent = () => {
 
     if(arrBooks){
         for(let i = 0; i < arrBooks.length; i += 1){
-            const bookItem = createElements('div', '', ['bookItems']);
+            const bookItem = createElements('div', 'bookDiv', ['bookItems']);
             bookItem.dataset.book = i;
 
             const bookItemTitle = createElements('div', 'bookItemTitle', ['bookSubItems'], '', `${arrBooks[i]['title']}`);
@@ -127,18 +127,45 @@ const bookTable = () => {
     return tableMain;
 }
 
-const windowInfo = () => {
+const windowInfo = (indexBook) => {
+    const { arrBooks } = DATA();
     const mainInfoDiv = createElements('div', 'mainInfoDiv');
 
     const ulInfoDiv = createElements('ul');
 
     const liInfoOne = createElements('li');
     const titleInfo = createElements('p', 'titleInfo','','','Title');
-    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','','Example');
+    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','', arrBooks[indexBook].title);
 
     liInfoOne.appendChild(titleInfo);
     liInfoOne.appendChild(titleInfoSpan);
     ulInfoDiv.appendChild(liInfoOne);
+
+    const liInfoTwo = createElements('li');
+    const authorInfo = createElements('p', 'authorInfo','','','Author');
+    const authorInfoSpan = createElements('span', 'authorInfoSpan', '','', arrBooks[indexBook].author);
+
+    liInfoTwo.appendChild(authorInfo);
+    liInfoTwo.appendChild(authorInfoSpan);
+    ulInfoDiv.appendChild(liInfoTwo);
+
+    const liInfoThree = createElements('li');
+    const startInfo = createElements('p', 'startInfo','','','Start Date');
+    const startInfoSpan = createElements('span', 'startInfoSpan', '','',arrBooks[indexBook].startDate);
+
+    liInfoThree.appendChild(startInfo);
+    liInfoThree.appendChild(startInfoSpan);
+    ulInfoDiv.appendChild(liInfoThree);
+
+    const liInfoFour = createElements('li');
+    const finishInfo = createElements('p', 'finishInfo','','','Finish Date');
+    const finishInfoSpan = createElements('span', 'finishInfoSpan', '','', arrBooks[indexBook].finishDate);
+
+    liInfoFour.appendChild(finishInfo);
+    liInfoFour.appendChild(finishInfoSpan);
+    ulInfoDiv.appendChild(liInfoFour);
+
+
 
     mainInfoDiv.appendChild(ulInfoDiv);
 
