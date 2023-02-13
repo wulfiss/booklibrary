@@ -39,9 +39,18 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
 };
 
 const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
-    const { bookItems, tableContent, main } = UI();
+    const { tableContent, main } = UI();
+
+    const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
+        const { mainInfoDiv } = UI();
+        if(mainInfoDiv){
+            console.log(mainInfoDiv);
+            mainInfoDiv.remove();
+        }
+    }
 
     tableContent.addEventListener('dblclick', (e) => {
+        removeMainDiv();
         main.appendChild(windowInfo(e.target.dataset.book));
         console.log(e.target.dataset.book)
     })
