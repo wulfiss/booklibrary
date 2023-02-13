@@ -12,6 +12,10 @@ const Books = (title, author, startDate, finishDate, status) => {
     }
 }
 
+const updateUI = function upDateUIQuery(){
+    UI();
+}
+
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
     let { arrBooks } = DATA();
 
@@ -35,6 +39,7 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
         const { title, author, startDate, finishDate } = DATA();
         arrToJson(Books(title, author, startDate, finishDate));
         updateBookTable();
+        clickOnBook();
     })
 };
 
@@ -44,7 +49,6 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
         const { mainInfoDiv } = UI();
         if(mainInfoDiv){
-            console.log(mainInfoDiv);
             mainInfoDiv.remove();
         }
     }
@@ -55,5 +59,6 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
         console.log(e.target.dataset.book)
     })
 }
+
 
 export{ btnForm, clickOnBook };
