@@ -52,13 +52,12 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     tableContent.addEventListener('dblclick', (e) => {
         removeMainDiv();
         main.appendChild(windowInfo(e.target.dataset.book));
-        console.log(e.target.dataset.book);
-        updateBookInfo(e.target.dataset.book);
+        editBookInfo(e.target.dataset.book);
     })
 }
 
-const updateBookInfo = function updateTheBookInfoWhenEdit(indexBook){
-    const { btnInfoSave } = BTNUPDATE();
+const editBookInfo = function editBookInfoWhenEdit(indexBook){
+    const { mainInfoDiv } = UI();
 
     const updateBookArr = function updateBookArr(title, author, startDate, finishDate, index){
         let { arrBooks } = DATA();
@@ -74,12 +73,21 @@ const updateBookInfo = function updateTheBookInfoWhenEdit(indexBook){
 
     }
 
-    btnInfoSave.addEventListener('click', (e) => {
-        const { updateTitle, updateAuthor, updateStartDate, updateFinishDate } = DATAUPDATE();
+    mainInfoDiv.addEventListener('click', (e) => {
+        let target = e.target;
 
-        updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook);
-        updateBookTable();
-        removeMainDiv();
+        if(target.nodeName === 'BUTTON'){
+            if(target.id === 'btnInfoSave'){
+                const { updateTitle, updateAuthor, updateStartDate, updateFinishDate } = DATAUPDATE();
+                updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook);
+                updateBookTable();
+                removeMainDiv();
+            }else if(target.id === 'btnInfoClose'){
+                removeMainDiv();
+            }
+        }
+
+        clickOnBook();
     })
 
 }
