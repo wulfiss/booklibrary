@@ -34,9 +34,12 @@ const BTN = () => {
 
 const DATAUPDATE = () => {
     const updateTitle = document.querySelector('#titleInfoSpan').textContent;
+    const updateAuthor = document.querySelector('#authorInfoSpan').textContent;
+    const updateStartDate = document.querySelector('#startInfoSpan').textContent;
+    const updateFinishDate = document.querySelector('#finishInfoSpan').textContent;
 
     return{
-        updateTitle
+        updateTitle, updateAuthor, updateStartDate, updateFinishDate
     }
 }
 

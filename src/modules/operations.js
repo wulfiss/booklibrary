@@ -54,16 +54,32 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
         removeMainDiv();
         main.appendChild(windowInfo(e.target.dataset.book));
         console.log(e.target.dataset.book);
-        updateBookInfo()
+        updateBookInfo(e.target.dataset.book);
     })
 }
 
 const updateBookInfo = function updateTheBookInfoWhenEdit(indexBook){
     const { btnInfoSave } = BTNUPDATE();
 
+    const updateBookArr = function updateBookArr(title, author, startDate, finishDate, index){
+        let { arrBooks } = DATA();
+
+        arrBooks[index].title = title;
+        arrBooks[index].author = author;
+        arrBooks[index].startDate = startDate;
+        arrBooks[index].finishDate = finishDate;
+
+        if(!arrBooks){arrBooks = [];}
+        localStorage.clear();
+        return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
+
+    }
+
     btnInfoSave.addEventListener('click', (e) => {
-        const { updateTitle } = DATAUPDATE();
-        console.log(updateTitle);
+        const { updateTitle, updateAuthor, updateStartDate, updateFinishDate } = DATAUPDATE();
+
+        updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook)
+
     })
 
 }
