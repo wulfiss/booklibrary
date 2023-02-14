@@ -31,4 +31,20 @@ const BTN = () => {
         btnSave, btnCancel
     }
 }
-export { UI, DATA, BTN };
+
+const DATAUPDATE = () => {
+    const updateTitle = document.querySelector('#titleInfoSpan').textContent;
+
+    return{
+        updateTitle
+    }
+}
+
+const BTNUPDATE = () => {
+    const btnInfoSave = document.querySelector('#btnInfoSave');
+
+    return{
+        btnInfoSave
+    }
+}
+export { UI, DATA, BTN, DATAUPDATE, BTNUPDATE };

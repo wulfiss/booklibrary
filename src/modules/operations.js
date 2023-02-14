@@ -1,4 +1,4 @@
-import { BTN, DATA, UI } from "./dataInputs";
+import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE } from "./dataInputs";
 import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
@@ -12,9 +12,6 @@ const Books = (title, author, startDate, finishDate, status) => {
     }
 }
 
-const updateUI = function upDateUIQuery(){
-    UI();
-}
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
     let { arrBooks } = DATA();
@@ -56,9 +53,19 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     tableContent.addEventListener('dblclick', (e) => {
         removeMainDiv();
         main.appendChild(windowInfo(e.target.dataset.book));
-        console.log(e.target.dataset.book)
+        console.log(e.target.dataset.book);
+        updateBookInfo()
     })
 }
 
+const updateBookInfo = function updateTheBookInfoWhenEdit(indexBook){
+    const { btnInfoSave } = BTNUPDATE();
+
+    btnInfoSave.addEventListener('click', (e) => {
+        const { updateTitle } = DATAUPDATE();
+        console.log(updateTitle);
+    })
+
+}
 
 export{ btnForm, clickOnBook };
