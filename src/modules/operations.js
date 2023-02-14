@@ -12,7 +12,6 @@ const Books = (title, author, startDate, finishDate, status) => {
     }
 }
 
-
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
     let { arrBooks } = DATA();
 
@@ -40,15 +39,15 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
     })
 };
 
+const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
+    const { mainInfoDiv } = UI();
+    if(mainInfoDiv){
+        mainInfoDiv.remove();
+    }
+}
+
 const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     const { tableContent, main } = UI();
-
-    const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
-        const { mainInfoDiv } = UI();
-        if(mainInfoDiv){
-            mainInfoDiv.remove();
-        }
-    }
 
     tableContent.addEventListener('dblclick', (e) => {
         removeMainDiv();
@@ -78,8 +77,9 @@ const updateBookInfo = function updateTheBookInfoWhenEdit(indexBook){
     btnInfoSave.addEventListener('click', (e) => {
         const { updateTitle, updateAuthor, updateStartDate, updateFinishDate } = DATAUPDATE();
 
-        updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook)
-
+        updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook);
+        updateBookTable();
+        removeMainDiv();
     })
 
 }
