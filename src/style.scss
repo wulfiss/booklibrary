@@ -31,3 +31,13 @@ div.bookItems{
 div.bookSubItems{
     pointer-events: none; // Avoid the child el being call when the event listener is in parent.
 }
+
+div#mainInfoDiv{
+    border: 1px solid black;
+
+    li{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+}

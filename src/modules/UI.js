@@ -134,7 +134,7 @@ const windowInfo = (indexBook) => {
     const ulInfoDiv = createElements('ul');
 
     const liInfoOne = createElements('li');
-    const titleInfo = createElements('p', 'titleInfo','','','Title');
+    const titleInfo = createElements('p', 'titleInfo','','','Title:');
     const titleInfoSpan = createElements('span', 'titleInfoSpan', '','', arrBooks[indexBook].title);
 
     liInfoOne.appendChild(titleInfo);
@@ -142,7 +142,7 @@ const windowInfo = (indexBook) => {
     ulInfoDiv.appendChild(liInfoOne);
 
     const liInfoTwo = createElements('li');
-    const authorInfo = createElements('p', 'authorInfo','','','Author');
+    const authorInfo = createElements('p', 'authorInfo','','','Author:');
     const authorInfoSpan = createElements('span', 'authorInfoSpan', '','', arrBooks[indexBook].author);
 
     liInfoTwo.appendChild(authorInfo);
@@ -150,7 +150,7 @@ const windowInfo = (indexBook) => {
     ulInfoDiv.appendChild(liInfoTwo);
 
     const liInfoThree = createElements('li');
-    const startInfo = createElements('p', 'startInfo','','','Start Date');
+    const startInfo = createElements('p', 'startInfo','','','Start Date:');
     const startInfoSpan = createElements('span', 'startInfoSpan', '','',arrBooks[indexBook].startDate);
 
     liInfoThree.appendChild(startInfo);
@@ -158,14 +158,20 @@ const windowInfo = (indexBook) => {
     ulInfoDiv.appendChild(liInfoThree);
 
     const liInfoFour = createElements('li');
-    const finishInfo = createElements('p', 'finishInfo','','','Finish Date');
+    const finishInfo = createElements('p', 'finishInfo','','','Finish Date:');
     const finishInfoSpan = createElements('span', 'finishInfoSpan', '','', arrBooks[indexBook].finishDate);
 
     liInfoFour.appendChild(finishInfo);
     liInfoFour.appendChild(finishInfoSpan);
     ulInfoDiv.appendChild(liInfoFour);
 
+    const liInfoFive = createElements('li');
+    const btnInfoSave = createElements('button', 'btnInfoSave', ['btnInfo'], 'button', 'Save and Close');
+    const btnInfoClose = createElements('button', 'btnInfoClose', ['btnInfo'], 'button', 'Close');
 
+    liInfoFive.appendChild(btnInfoSave);
+    liInfoFive.appendChild(btnInfoClose);
+    ulInfoDiv.appendChild(liInfoFive);
 
     mainInfoDiv.appendChild(ulInfoDiv);
 
