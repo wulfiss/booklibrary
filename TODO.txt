@@ -1,3 +1,4 @@
-extent edit function for the author, startDate, finishDate.
-Update arrbooks with new info.
-Update the table content when change info.
+change in edit window the format for dates
+add status to book (read, reading, dropped)
+
+think about if there is a better way to design the edit window
