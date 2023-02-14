@@ -1,6 +1,6 @@
 import { UI, DATA } from "./dataInputs";
 
-const createElements = function littleHelperForCreatingHtmlElements(type, id, clasS, attrType, textNode, idLbl, attrValue, attrName, placeHldr){
+const createElements = function littleHelperForCreatingHtmlElements(type, id, clasS, attrType, textNode, idLbl, attrValue, attrName, placeHldr, randomAttr, randomValue){
     const temp = document.createElement(type);
 
     if(id){
@@ -27,6 +27,9 @@ const createElements = function littleHelperForCreatingHtmlElements(type, id, cl
     }
     if(placeHldr){
         temp.setAttribute('placeholder', placeHldr);
+    }
+    if(randomAttr){
+        temp.setAttribute(randomAttr, randomValue);
     }
 
     return temp;
@@ -135,7 +138,7 @@ const windowInfo = (indexBook) => {
 
     const liInfoOne = createElements('li');
     const titleInfo = createElements('p', 'titleInfo','','','Title:');
-    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','', arrBooks[indexBook].title);
+    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','', arrBooks[indexBook].title, '', '', '', '', 'contenteditable', 'true');
 
     liInfoOne.appendChild(titleInfo);
     liInfoOne.appendChild(titleInfoSpan);
@@ -143,7 +146,8 @@ const windowInfo = (indexBook) => {
 
     const liInfoTwo = createElements('li');
     const authorInfo = createElements('p', 'authorInfo','','','Author:');
-    const authorInfoSpan = createElements('span', 'authorInfoSpan', '','', arrBooks[indexBook].author);
+    const authorInfoSpan = createElements('span', 'authorInfoSpan', '','', arrBooks[indexBook].author, '', '', '', '', 'contenteditable', 'true');
+    authorInfoSpan.setAttribute('contenteditable', 'true');
 
     liInfoTwo.appendChild(authorInfo);
     liInfoTwo.appendChild(authorInfoSpan);
@@ -151,7 +155,8 @@ const windowInfo = (indexBook) => {
 
     const liInfoThree = createElements('li');
     const startInfo = createElements('p', 'startInfo','','','Start Date:');
-    const startInfoSpan = createElements('span', 'startInfoSpan', '','',arrBooks[indexBook].startDate);
+    const startInfoSpan = createElements('span', 'startInfoSpan', '','',arrBooks[indexBook].startDate, '', '', '', '', 'contenteditable', 'true');
+    startInfoSpan.setAttribute('contenteditable', 'true');
 
     liInfoThree.appendChild(startInfo);
     liInfoThree.appendChild(startInfoSpan);
@@ -159,7 +164,8 @@ const windowInfo = (indexBook) => {
 
     const liInfoFour = createElements('li');
     const finishInfo = createElements('p', 'finishInfo','','','Finish Date:');
-    const finishInfoSpan = createElements('span', 'finishInfoSpan', '','', arrBooks[indexBook].finishDate);
+    const finishInfoSpan = createElements('span', 'finishInfoSpan', '','', arrBooks[indexBook].finishDate, '', '', '', '', 'contenteditable', 'true');
+    finishInfoSpan.setAttribute('contenteditable', 'true');
 
     liInfoFour.appendChild(finishInfo);
     liInfoFour.appendChild(finishInfoSpan);
