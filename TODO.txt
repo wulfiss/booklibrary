@@ -1,0 +1,3 @@
+extent edit function for the author, startDate, finishDate.
+Update arrbooks with new info.
+Update the table content when change info.
