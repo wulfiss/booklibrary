@@ -1,4 +1,3 @@
-change in edit window the format for dates
+
 add status to book (read, reading, dropped)
 
-think about if there is a better way to design the edit window

@@ -138,34 +138,38 @@ const windowInfo = (indexBook) => {
 
     const liInfoOne = createElements('li');
     const titleInfo = createElements('p', 'titleInfo','','','Title:');
-    const titleInfoSpan = createElements('span', 'titleInfoSpan', '','', arrBooks[indexBook].title, '', '', '', '', 'contenteditable', 'true');
+    const titleInfoInput = createElements('input', 'titleInfoInput', '', 'text', '', '', arrBooks[indexBook].title);
 
     liInfoOne.appendChild(titleInfo);
-    liInfoOne.appendChild(titleInfoSpan);
+    liInfoOne.appendChild(titleInfoInput);
     ulInfoDiv.appendChild(liInfoOne);
 
     const liInfoTwo = createElements('li');
     const authorInfo = createElements('p', 'authorInfo','','','Author:');
-    const authorInfoSpan = createElements('span', 'authorInfoSpan', '','', arrBooks[indexBook].author, '', '', '', '', 'contenteditable', 'true');
+    const authorInfoInput = createElements('input', 'authorInfoInput', '','text', '', '', arrBooks[indexBook].author);
 
     liInfoTwo.appendChild(authorInfo);
-    liInfoTwo.appendChild(authorInfoSpan);
+    liInfoTwo.appendChild(authorInfoInput);
     ulInfoDiv.appendChild(liInfoTwo);
 
     const liInfoThree = createElements('li');
     const startInfo = createElements('p', 'startInfo','','','Start Date:');
-    const startInfoSpan = createElements('span', 'startInfoSpan', '','',arrBooks[indexBook].startDate, '', '', '', '', 'contenteditable', 'true');
+    const startInfoInput = createElements('input', 'startInfoInput', '','text', '', '', arrBooks[indexBook].startDate);
+    startInfoInput.setAttribute('onfocus', '(this.type="date")'); // show placeholder in date input
+    startInfoInput.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
 
     liInfoThree.appendChild(startInfo);
-    liInfoThree.appendChild(startInfoSpan);
+    liInfoThree.appendChild(startInfoInput);
     ulInfoDiv.appendChild(liInfoThree);
 
     const liInfoFour = createElements('li');
     const finishInfo = createElements('p', 'finishInfo','','','Finish Date:');
-    const finishInfoSpan = createElements('span', 'finishInfoSpan', '','', arrBooks[indexBook].finishDate, '', '', '', '', 'contenteditable', 'true');
+    const finishInfoInput = createElements('input', 'finishInfoInput', '','text', '', '', arrBooks[indexBook].finishDate);
+    finishInfoInput.setAttribute('onfocus', '(this.type="date")'); // show placeholder in date input
+    finishInfoInput.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
 
     liInfoFour.appendChild(finishInfo);
-    liInfoFour.appendChild(finishInfoSpan);
+    liInfoFour.appendChild(finishInfoInput);
     ulInfoDiv.appendChild(liInfoFour);
 
     const liInfoFive = createElements('li');

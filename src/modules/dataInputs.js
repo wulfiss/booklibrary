@@ -33,10 +33,10 @@ const BTN = () => {
 }
 
 const DATAUPDATE = () => {
-    const updateTitle = document.querySelector('#titleInfoSpan').textContent;
-    const updateAuthor = document.querySelector('#authorInfoSpan').textContent;
-    const updateStartDate = document.querySelector('#startInfoSpan').textContent;
-    const updateFinishDate = document.querySelector('#finishInfoSpan').textContent;
+    const updateTitle = document.querySelector('#titleInfoInput').value;
+    const updateAuthor = document.querySelector('#authorInfoInput').value;
+    const updateStartDate = document.querySelector('#startInfoInput').value;
+    const updateFinishDate = document.querySelector('#finishInfoInput').value;
 
     return{
         updateTitle, updateAuthor, updateStartDate, updateFinishDate
@@ -50,4 +50,5 @@ const BTNUPDATE = () => {
         btnInfoSave
     }
 }
+
 export { UI, DATA, BTN, DATAUPDATE, BTNUPDATE };
