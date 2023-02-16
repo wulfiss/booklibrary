@@ -40,8 +40,14 @@ div#mainInfoDiv{
 
 /* ******************FORM********************* */
 // for the option to be gray as the place holders in the form
+%input{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+}
+
 select{
-    width: 198px;
+    @extend %input;
 
     &:required:invalid{
         color:gray;
@@ -58,9 +64,16 @@ option{
 //
 
 button.buttons{
-    width: 99px;
-    height: 22.4px;
+    @extend %input;
+    width: 100px;
 }
 
+input[type = 'date']{
+    @extend %input;
+}
+
+input[type = 'text']{
+    @extend %input;
+}
 
 /* ******************FORM********************* */

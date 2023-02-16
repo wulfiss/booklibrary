@@ -47,7 +47,7 @@ const form = function CreateAFormForAddTheBook(){
     liFormOne.appendChild(bookName);
 
     const liFormTwo = createElements('li');
-    const bookAuthor = createElements('input', 'authorBook', 'text', 'Author', '', '', '', '', 'Author');
+    const bookAuthor = createElements('input', 'authorBook', '', 'text', '', '', '', '', 'Author');
     liFormTwo.appendChild(bookAuthor);
 
     const liFromThree = createElements('li');
@@ -62,9 +62,10 @@ const form = function CreateAFormForAddTheBook(){
     finalDate.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
     liFromFour.appendChild(finalDate);
 
-    //create select element in form
+    /************************ create select element in form  ************************/
     const liFormFive = createElements('li');
     const statusOp = createElements('select', 'statusBook', '', '', '' , '', '', '', '', 'required', '');
+
     // add this part in order to mimic placeholder follow in the css
     const placeHldrStatus = createElements('option', 'Status', ['options'], '', 'Status', '');
     placeHldrStatus.setAttribute('disabled','');
@@ -78,9 +79,10 @@ const form = function CreateAFormForAddTheBook(){
         const options = createElements('option', optArr[opt], ['options'], '', optArr[opt], '', optArr[opt]);
         statusOp.appendChild(options);
     }
-    //create select element in form
+
     liFormFive.appendChild(statusOp);
 
+    /************************ create select element in form  ************************/
 
     const liFormBtn = createElements('li');
     const btnFormSave = createElements('button', 'btnSave', ['buttons'], 'button', 'Save');
