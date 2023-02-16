@@ -8,10 +8,6 @@ li{
     list-style: none;
 }
 
-button.buttons{
-    width: 99px;
-    height: 22.4px;
-}
 
 div#tableHeader{
     display: grid;
@@ -41,3 +37,30 @@ div#mainInfoDiv{
         gap: 5px;
     }
 }
+
+/* ******************FORM********************* */
+// for the option to be gray as the place holders in the form
+select{
+    width: 198px;
+
+    &:required:invalid{
+        color:gray;
+    }
+}
+
+option{
+    color:black;
+
+    &[value = ''][disabled]{
+    display: none;
+    }
+}
+//
+
+button.buttons{
+    width: 99px;
+    height: 22.4px;
+}
+
+
+/* ******************FORM********************* */
