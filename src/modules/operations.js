@@ -2,14 +2,7 @@ import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE } from "./dataInputs";
 import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
-    if(title === ''){ title = '---'}
-    if(author === ''){ author = '---'}
-    if(startDate === ''){ startDate = '---'}
-    if(finishDate === ''){ finishDate = '---'}
-
-    return{
-        title, author, startDate, finishDate
-    }
+    return{ title, author, startDate, finishDate }
 }
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
