@@ -1,3 +1,5 @@
 node_modules
 micro-access-377101-87a9bd5a0210.json
 dist
+index_bundle.js
+dist/index_bundle.js

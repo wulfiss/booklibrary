@@ -35,48 +35,65 @@ const createElements = function littleHelperForCreatingHtmlElements(type, id, cl
     return temp;
 }
 
+const addAttr = (el, attr) => {
+    for(const [key, value] of Object.entries(attr)){
+        el.setAttribute(`${key}`, `${value}`);
+    }
+}
+
+const createElementsTwo = function littleHelperForCreatingHtmlElements(node, txt, attr){
+
+    const temp = document.createElement(node);
+
+    if(txt){
+        const text = document.createTextNode(txt);
+        temp.appendChild(text);
+    };
+
+    if(attr){
+        addAttr(temp, attr)
+    };
+
+    return temp;
+
+}
+
 const form = function CreateAFormForAddTheBook(){
-    const fieldset = createElements('fieldset');
-    const legend = createElements('legend', '', '', '' ,'Book');
+    const fieldset = createElementsTwo('fieldset');
+    const legend = createElementsTwo('legend', 'Book');
 
-    const form = createElements('form');
-    const ulForm = createElements('ul');
+    const form = createElementsTwo('form');
+    const ulForm = createElementsTwo('ul');
 
-    const liFormOne = createElements('li');
-    const bookName = createElements('input', 'nameBook', '', 'text', '', '', '', '', 'Title');
+    const liFormOne = createElementsTwo('li');
+    const bookName = createElementsTwo('input', '', { id: 'nameBook', type: 'text', placeHolder: 'Title' });
     liFormOne.appendChild(bookName);
 
-    const liFormTwo = createElements('li');
-    const bookAuthor = createElements('input', 'authorBook', '', 'text', '', '', '', '', 'Author');
+    const liFormTwo = createElementsTwo('li');
+    const bookAuthor = createElementsTwo('input', '', { id: 'authorBook', type: 'text', placeHolder: 'Author' });
     liFormTwo.appendChild(bookAuthor);
 
+    /* when these element are onfocus they are showed as input type date, but when they lose focus they are showed as type text, so they can display the placeholder*/
     const liFromThree = createElements('li');
-    const initialDate = createElements('input', 'initialDate', '', 'text', '', '', '', '', 'Start reading');
-    initialDate.setAttribute('onfocus', '(this.type="date")'); // show placeholder in date input
-    initialDate.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
+    const initialDate = createElementsTwo('input', '', { id: 'initialDate', type: 'text', placeHolder: 'Start Date', onfocus: '(this.type="date")', onblur: '(this.type="text")' });
     liFromThree.appendChild(initialDate);
 
     const liFromFour = createElements('li');
-    const finalDate = createElements('input', 'finalDate', '', 'text', '', '', '', '', 'Finish reading');
-    finalDate.setAttribute('onfocus', '(this.type="date")'); // show placeholder in date input
-    finalDate.setAttribute('onblur', '(this.type="text")');// show placeholder in date input
+    const finalDate = createElementsTwo('input', '', { id: 'finalDate', type: 'text', placeHolder: 'Finish Date', onfocus: '(this.type="date")', onblur: '(this.type="text")' });
     liFromFour.appendChild(finalDate);
 
     /************************ create select element in form  ************************/
     const liFormFive = createElements('li');
-    const statusOp = createElements('select', 'statusBook', '', '', '' , '', '', '', '', 'required', '');
+    const statusOp = createElementsTwo('select', '', { id: 'statusBook', required: '' });
 
     // add this part in order to mimic placeholder follow in the css
-    const placeHldrStatus = createElements('option', 'Status', ['options'], '', 'Status', '');
-    placeHldrStatus.setAttribute('disabled','');
-    placeHldrStatus.setAttribute('selected', '');
-    placeHldrStatus.setAttribute('value', '');
+    const placeHldrStatus = createElementsTwo('option', 'Status', { id:'Status', class: 'options', disabled: '', selected: '', value: '' });
     statusOp.appendChild(placeHldrStatus);
 
-    const optArr = ['Reading', 'Completed', 'On-Hold', 'Dropped', 'Plan to Read'];
+    const optArr = { reading: 'Reading', completed: 'Completed', onhold: 'On-Hold', dropped: 'Dropped', planTwoWatch: 'Plan to Read' };
 
-    for (const opt in optArr){
-        const options = createElements('option', optArr[opt], ['options'], '', optArr[opt], '', optArr[opt]);
+    for (const [key, value] of Object.entries(optArr)){
+        const options = createElementsTwo('option', value, { id: key, class: 'options', value: value });
         statusOp.appendChild(options);
     }
 
@@ -85,8 +102,8 @@ const form = function CreateAFormForAddTheBook(){
     /************************ create select element in form  ************************/
 
     const liFormBtn = createElements('li');
-    const btnFormSave = createElements('button', 'btnSave', ['buttons'], 'button', 'Save');
-    const btnFormCancel = createElements('button', 'btnCancel', ['buttons'], 'button', 'Cancel');
+    const btnFormSave = createElementsTwo('button', 'Save', { id: 'btnSave', class: 'buttons', type: 'button' });
+    const btnFormCancel = createElementsTwo('button', 'Cancel', { id: 'btnCancel', class: 'buttons', type: 'button' });
     liFormBtn.appendChild(btnFormSave);
     liFormBtn.appendChild(btnFormCancel);
 
