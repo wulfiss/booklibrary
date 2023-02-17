@@ -17,9 +17,10 @@ const DATA = () => {
     const author = document.querySelector('#authorBook').value;
     const startDate = document.querySelector('#initialDate').value;
     const finishDate = document.querySelector('#finalDate').value;
+    const status = document.querySelector('#statusBook').value;
 
     return{
-        arrBooks, title, author, startDate, finishDate
+        arrBooks, title, author, startDate, finishDate, status
     }
 }
 

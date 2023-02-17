@@ -1,28 +1,6 @@
 import { UI, DATA } from "./dataInputs";
 
-/* const addAttr = (el, attr) => {
-    for(const [key, value] of Object.entries(attr)){
-        el.setAttribute(`${key}`, `${value}`);
-    }
-}
-
-const createElements = function littleHelperForCreatingHtmlElements(node, txt, attr){
-
-    const temp = document.createElement(node);
-
-    if(txt){
-        const text = document.createTextNode(txt);
-        temp.appendChild(text);
-    };
-
-    if(attr){
-        addAttr(temp, attr)
-    };
-
-    return temp;
-
-} */
-
+//node is the element that is going to be created so ex: node: 'div', the fallback is always to div, then 'text' is for create textNode
 const createElements = function littleHelperForCreatingHtmlElements(el){
 
     const temp = el.node ? document.createElement(el.node) : document.createElement('div');
@@ -39,7 +17,7 @@ const createElements = function littleHelperForCreatingHtmlElements(el){
     }
 
     return temp;
-}//node is the element that is going to be created so ex: node: 'div', the fallback is always to div, then 'text' is for create textNode
+}
 
 const form = function CreateAFormForAddTheBook(){
     const fieldset = createElements({ node: 'fieldset' });
@@ -119,9 +97,11 @@ const showTableContent = () => {
             const bookItemAuthor = createElements({ node: 'div', text: arrBooks[i]['author'], id: 'bookItemAuthor', class: 'bookSubItems' });
             const bookItemStartDate = createElements({ node: 'div', text: arrBooks[i]['startDate'], id: 'bookItemStartDate', class: 'bookSubItems' });
             const bookItemFinishDate = createElements({ node: 'div', text: arrBooks[i]['finishDate'], id: 'bookItemFinishDate', class: 'bookSubItems' });
+            const bookItemStatus = createElements({ node: 'div', text: arrBooks[i]['status'], id: 'bookItemStatus', class: 'bookSubItems' });
 
             bookItem.appendChild(bookItemTitle);
             bookItem.appendChild(bookItemAuthor);
+            bookItem.appendChild(bookItemStatus);
             bookItem.appendChild(bookItemStartDate);
             bookItem.appendChild(bookItemFinishDate);
 
@@ -141,9 +121,11 @@ const bookTable = () => {
     const headerAuthor = createElements({ node:'div', text: 'Author', id: 'headerAuthor', class: 'headerItems' });
     const headerStarDate = createElements({ node:'div', text: 'Start date', id: 'headerStarDate', class: 'headerItems' });
     const headerFinishDate = createElements({ node:'div', text: 'Finish date', id: 'headerFinishDate', class: 'headerItems' });
+    const headerStatus = createElements({ node:'div', text: 'Status', id: 'headerStatus', class: 'headerItems' });
 
     header.appendChild(headerTitle);
     header.appendChild(headerAuthor);
+    header.appendChild(headerStatus);
     header.appendChild(headerStarDate);
     header.appendChild(headerFinishDate);
 

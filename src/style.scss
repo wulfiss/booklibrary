@@ -11,12 +11,12 @@ li{
 
 div#tableHeader{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 div.bookItems{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
     &:hover, &:focus{
         background-color: rgba(70, 107, 226, 0.459);

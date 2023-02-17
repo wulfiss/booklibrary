@@ -2,7 +2,7 @@ import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE } from "./dataInputs";
 import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
-    return{ title, author, startDate, finishDate }
+    return{ title, author, startDate, finishDate, status }
 }
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
@@ -25,8 +25,8 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
     const { btnSave, btnCancel } = BTN();
 
     btnSave.addEventListener('click', (e) => {
-        const { title, author, startDate, finishDate } = DATA();
-        arrToJson(Books(title, author, startDate, finishDate));
+        const { title, author, startDate, finishDate, status } = DATA();
+        arrToJson(Books(title, author, startDate, finishDate, status));
         updateBookTable();
         clickOnBook();
     })
