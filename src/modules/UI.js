@@ -175,12 +175,28 @@ const windowInfo = (indexBook) => {
     ulInfoDiv.appendChild(liInfoFour);
 
     const liInfoFive = createElements({ node: 'li' });
+    const statusInfo = createElements({ node: 'p', text: 'Status:', id:'statusInfo' });
+    const statusOp = createElements({ node: 'select', id: 'statusBook', value: arrBooks[indexBook].status });
+
+    const optArr = { reading: 'Reading', completed: 'Completed', onhold: 'On-Hold', dropped: 'Dropped', planTwoWatch: 'Plan to Read' };
+
+    for (const [key, value] of Object.entries(optArr)){
+        const options = createElements({ node:'option', text: value, id: key, class: 'options', value: value });
+        statusOp.appendChild(options);
+    }
+
+    liInfoFive.appendChild(statusInfo);
+    liInfoFive.appendChild(statusOp);
+    ulInfoDiv.appendChild(liInfoFive);
+
+
+    const liInfoSix = createElements({ node: 'li' });
     const btnInfoSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnInfoSave', class: 'btnInfo', type: 'button' });
     const btnInfoClose = createElements({ node: 'button', text: 'Close', id: 'btnInfoClose', class: 'btnInfo', type: 'button' });
 
-    liInfoFive.appendChild(btnInfoSave);
-    liInfoFive.appendChild(btnInfoClose);
-    ulInfoDiv.appendChild(liInfoFive);
+    liInfoSix.appendChild(btnInfoSave);
+    liInfoSix.appendChild(btnInfoClose);
+    ulInfoDiv.appendChild(liInfoSix);
 
     mainInfoDiv.appendChild(ulInfoDiv);
 
