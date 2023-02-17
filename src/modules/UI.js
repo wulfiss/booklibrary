@@ -142,41 +142,40 @@ const windowInfo = (indexBook) => {
     const ulInfoDiv = createElements({ node: 'ul' });
 
     const liInfoOne = createElements({ node: 'li' });
-    const titleInfo = createElements({ node: 'p', text: 'Title:', id:'titleInfo' });
-    const titleInfoInput = createElements({ node: 'input', id: 'titleInfoInput', type: 'text', value: arrBooks[indexBook].title });
+    const titleInfo = createElements({ node: 'p', text: 'Title:', id:'titleUpdateP' });
+    const titleInfoInput = createElements({ node: 'input', id: 'titleUpdate', type: 'text', value: arrBooks[indexBook].title });
 
     liInfoOne.appendChild(titleInfo);
     liInfoOne.appendChild(titleInfoInput);
     ulInfoDiv.appendChild(liInfoOne);
 
     const liInfoTwo = createElements({ node: 'li' });
-    const authorInfo = createElements({ node: 'p', text: 'Author:', id:'authorInfo' });
-    const authorInfoInput = createElements({ node: 'input', id: 'authorInfoInput', type: 'text', value: arrBooks[indexBook].author });
+    const authorInfo = createElements({ node: 'p', text: 'Author:', id:'authorUpdateP' });
+    const authorInfoInput = createElements({ node: 'input', id: 'authorUpdate', type: 'text', value: arrBooks[indexBook].author });
 
     liInfoTwo.appendChild(authorInfo);
     liInfoTwo.appendChild(authorInfoInput);
     ulInfoDiv.appendChild(liInfoTwo);
 
     const liInfoThree = createElements({ node: 'li' });
-    const startInfo = createElements({ node: 'p', text: 'Start Date:', id:'startInfo' });
-    const startInfoInput = createElements({ node: 'input', id: 'startInfoInput', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].startDate });
+    const startInfo = createElements({ node: 'p', text: 'Start Date:', id:'startUpdateP' });
+    const startInfoInput = createElements({ node: 'input', id: 'startUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].startDate });
 
     liInfoThree.appendChild(startInfo);
     liInfoThree.appendChild(startInfoInput);
     ulInfoDiv.appendChild(liInfoThree);
 
     const liInfoFour = createElements({ node: 'li' });
-    const finishInfo = createElements({ node: 'p', text: 'Finish Date:', id:'finishInfo' });
-    const finishInfoInput = createElements({ node: 'input', id: 'finishInfoInput', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].finishDate });
-
+    const finishInfo = createElements({ node: 'p', text: 'Finish Date:', id:'finishUpdateP' });
+    const finishInfoInput = createElements({ node: 'input', id: 'finishUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].finishDate });
 
     liInfoFour.appendChild(finishInfo);
     liInfoFour.appendChild(finishInfoInput);
     ulInfoDiv.appendChild(liInfoFour);
 
     const liInfoFive = createElements({ node: 'li' });
-    const statusInfo = createElements({ node: 'p', text: 'Status:', id:'statusInfo' });
-    const statusOp = createElements({ node: 'select', id: 'statusBook', value: arrBooks[indexBook].status });
+    const statusInfo = createElements({ node: 'p', text: 'Status:', id:'statusUpdateP' });
+    const statusOp = createElements({ node: 'select', id: 'statusUpdate', value: arrBooks[indexBook].status });
 
     const optArr = { reading: 'Reading', completed: 'Completed', onhold: 'On-Hold', dropped: 'Dropped', planTwoWatch: 'Plan to Read' };
 
@@ -189,10 +188,9 @@ const windowInfo = (indexBook) => {
     liInfoFive.appendChild(statusOp);
     ulInfoDiv.appendChild(liInfoFive);
 
-
     const liInfoSix = createElements({ node: 'li' });
-    const btnInfoSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnInfoSave', class: 'btnInfo', type: 'button' });
-    const btnInfoClose = createElements({ node: 'button', text: 'Close', id: 'btnInfoClose', class: 'btnInfo', type: 'button' });
+    const btnInfoSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnUpdateSave', class: 'btnInfo', type: 'button' });
+    const btnInfoClose = createElements({ node: 'button', text: 'Close', id: 'btnUpdateClose', class: 'btnInfo', type: 'button' });
 
     liInfoSix.appendChild(btnInfoSave);
     liInfoSix.appendChild(btnInfoClose);

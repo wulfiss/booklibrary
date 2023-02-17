@@ -34,18 +34,19 @@ const BTN = () => {
 }
 
 const DATAUPDATE = () => {
-    const updateTitle = document.querySelector('#titleInfoInput').value;
-    const updateAuthor = document.querySelector('#authorInfoInput').value;
-    const updateStartDate = document.querySelector('#startInfoInput').value;
-    const updateFinishDate = document.querySelector('#finishInfoInput').value;
+    const updateTitle = document.querySelector('#titleUpdate').value;
+    const updateAuthor = document.querySelector('#authorUpdate').value;
+    const updateStartDate = document.querySelector('#startUpdate').value;
+    const updateFinishDate = document.querySelector('#finishUpdate').value;
+    const updateStatus = document.querySelector('#statusUpdate').value;
 
     return{
-        updateTitle, updateAuthor, updateStartDate, updateFinishDate
+        updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus
     }
 }
 
 const BTNUPDATE = () => {
-    const btnInfoSave = document.querySelector('#btnInfoSave');
+    const btnInfoSave = document.querySelector('#btnUpdateSave');
 
     return{
         btnInfoSave

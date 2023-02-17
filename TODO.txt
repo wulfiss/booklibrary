@@ -1,4 +1,2 @@
-
-finish add status to book (read, reading, dropped)
 add delete function
 fallback for error when there is a null in the localStorage;

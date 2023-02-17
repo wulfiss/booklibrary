@@ -52,13 +52,14 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
 const editBookInfo = function editBookInfoWhenEdit(indexBook){
     const { mainInfoDiv } = UI();
 
-    const updateBookArr = function updateBookArr(title, author, startDate, finishDate, index){
+    const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
         let { arrBooks } = DATA();
 
         arrBooks[index].title = title;
         arrBooks[index].author = author;
         arrBooks[index].startDate = startDate;
         arrBooks[index].finishDate = finishDate;
+        arrBooks[index].status = status;
 
         if(!arrBooks){arrBooks = [];}
         localStorage.clear();
@@ -70,12 +71,12 @@ const editBookInfo = function editBookInfoWhenEdit(indexBook){
         let target = e.target;
 
         if(target.nodeName === 'BUTTON'){
-            if(target.id === 'btnInfoSave'){
-                const { updateTitle, updateAuthor, updateStartDate, updateFinishDate } = DATAUPDATE();
-                updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate, indexBook);
+            if(target.id === 'btnUpdateSave'){
+                const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DATAUPDATE();
+                updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate,updateStatus, indexBook);
                 updateBookTable();
                 removeMainDiv();
-            }else if(target.id === 'btnInfoClose'){
+            }else if(target.id === 'btnUpdateClose'){
                 removeMainDiv();
             }
         }
