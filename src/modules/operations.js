@@ -33,9 +33,9 @@ const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
 };
 
 const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
-    const { mainInfoDiv } = UI();
-    if(mainInfoDiv){
-        mainInfoDiv.remove();
+    const { mainUpdateDiv } = UI();
+    if(mainUpdateDiv){
+        mainUpdateDiv.remove();
     }
 }
 
@@ -45,12 +45,12 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     tableContent.addEventListener('dblclick', (e) => {
         removeMainDiv();
         main.appendChild(windowInfo(e.target.dataset.book));
-        editBookInfo(e.target.dataset.book);
+        updateBookInfo(e.target.dataset.book);
     })
 }
 
-const editBookInfo = function editBookInfoWhenEdit(indexBook){
-    const { mainInfoDiv } = UI();
+const updateBookInfo = function editBookInfoWhenEdit(indexBook){
+    const { mainUpdateDiv } = UI();
 
     const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
         let { arrBooks } = DATA();
@@ -67,7 +67,7 @@ const editBookInfo = function editBookInfoWhenEdit(indexBook){
 
     }
 
-    mainInfoDiv.addEventListener('click', (e) => {
+    mainUpdateDiv.addEventListener('click', (e) => {
         let target = e.target;
 
         if(target.nodeName === 'BUTTON'){

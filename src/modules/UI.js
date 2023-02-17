@@ -137,68 +137,68 @@ const bookTable = () => {
 
 const windowInfo = (indexBook) => {
     const { arrBooks } = DATA();
-    const mainInfoDiv = createElements({ node: 'div', id: 'mainInfoDiv' });
+    const mainUpdateDiv = createElements({ node: 'div', id: 'mainUpdateDiv' });
 
-    const ulInfoDiv = createElements({ node: 'ul' });
+    const ulUpdate = createElements({ node: 'ul' });
 
-    const liInfoOne = createElements({ node: 'li' });
-    const titleInfo = createElements({ node: 'p', text: 'Title:', id:'titleUpdateP' });
-    const titleInfoInput = createElements({ node: 'input', id: 'titleUpdate', type: 'text', value: arrBooks[indexBook].title });
+    const liUpdateOne = createElements({ node: 'li' });
+    const titleUpdateP = createElements({ node: 'p', text: 'Title:', id:'titleUpdateP' });
+    const titleUpdate = createElements({ node: 'input', id: 'titleUpdate', type: 'text', value: arrBooks[indexBook].title });
 
-    liInfoOne.appendChild(titleInfo);
-    liInfoOne.appendChild(titleInfoInput);
-    ulInfoDiv.appendChild(liInfoOne);
+    liUpdateOne.appendChild(titleUpdateP);
+    liUpdateOne.appendChild(titleUpdate);
+    ulUpdate.appendChild(liUpdateOne);
 
-    const liInfoTwo = createElements({ node: 'li' });
-    const authorInfo = createElements({ node: 'p', text: 'Author:', id:'authorUpdateP' });
-    const authorInfoInput = createElements({ node: 'input', id: 'authorUpdate', type: 'text', value: arrBooks[indexBook].author });
+    const liUpdateTwo = createElements({ node: 'li' });
+    const authorUpdateP = createElements({ node: 'p', text: 'Author:', id:'authorUpdateP' });
+    const authorUpdate = createElements({ node: 'input', id: 'authorUpdate', type: 'text', value: arrBooks[indexBook].author });
 
-    liInfoTwo.appendChild(authorInfo);
-    liInfoTwo.appendChild(authorInfoInput);
-    ulInfoDiv.appendChild(liInfoTwo);
+    liUpdateTwo.appendChild(authorUpdateP);
+    liUpdateTwo.appendChild(authorUpdate);
+    ulUpdate.appendChild(liUpdateTwo);
 
-    const liInfoThree = createElements({ node: 'li' });
-    const startInfo = createElements({ node: 'p', text: 'Start Date:', id:'startUpdateP' });
-    const startInfoInput = createElements({ node: 'input', id: 'startUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].startDate });
+    const liUpdateThree = createElements({ node: 'li' });
+    const startUpdateP = createElements({ node: 'p', text: 'Start Date:', id:'startUpdateP' });
+    const startUpdate = createElements({ node: 'input', id: 'startUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].startDate });
 
-    liInfoThree.appendChild(startInfo);
-    liInfoThree.appendChild(startInfoInput);
-    ulInfoDiv.appendChild(liInfoThree);
+    liUpdateThree.appendChild(startUpdateP);
+    liUpdateThree.appendChild(startUpdate);
+    ulUpdate.appendChild(liUpdateThree);
 
-    const liInfoFour = createElements({ node: 'li' });
-    const finishInfo = createElements({ node: 'p', text: 'Finish Date:', id:'finishUpdateP' });
-    const finishInfoInput = createElements({ node: 'input', id: 'finishUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].finishDate });
+    const liUpdateFour = createElements({ node: 'li' });
+    const finishUpdateP = createElements({ node: 'p', text: 'Finish Date:', id:'finishUpdateP' });
+    const finishUpdate = createElements({ node: 'input', id: 'finishUpdate', type: 'text', onfocus: '(this.type="date")', onblur: '(this.type="text")', value: arrBooks[indexBook].finishDate });
 
-    liInfoFour.appendChild(finishInfo);
-    liInfoFour.appendChild(finishInfoInput);
-    ulInfoDiv.appendChild(liInfoFour);
+    liUpdateFour.appendChild(finishUpdateP);
+    liUpdateFour.appendChild(finishUpdate);
+    ulUpdate.appendChild(liUpdateFour);
 
-    const liInfoFive = createElements({ node: 'li' });
-    const statusInfo = createElements({ node: 'p', text: 'Status:', id:'statusUpdateP' });
-    const statusOp = createElements({ node: 'select', id: 'statusUpdate', value: arrBooks[indexBook].status });
+    const liUpdateFive = createElements({ node: 'li' });
+    const statusUpdateP = createElements({ node: 'p', text: 'Status:', id:'statusUpdateP' });
+    const statusUpdate = createElements({ node: 'select', id: 'statusUpdate', value: arrBooks[indexBook].status });
 
     const optArr = { reading: 'Reading', completed: 'Completed', onhold: 'On-Hold', dropped: 'Dropped', planTwoWatch: 'Plan to Read' };
 
     for (const [key, value] of Object.entries(optArr)){
         const options = createElements({ node:'option', text: value, id: key, class: 'options', value: value });
-        statusOp.appendChild(options);
+        statusUpdate.appendChild(options);
     }
 
-    liInfoFive.appendChild(statusInfo);
-    liInfoFive.appendChild(statusOp);
-    ulInfoDiv.appendChild(liInfoFive);
+    liUpdateFive.appendChild(statusUpdateP);
+    liUpdateFive.appendChild(statusUpdate);
+    ulUpdate.appendChild(liUpdateFive);
 
-    const liInfoSix = createElements({ node: 'li' });
-    const btnInfoSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnUpdateSave', class: 'btnInfo', type: 'button' });
-    const btnInfoClose = createElements({ node: 'button', text: 'Close', id: 'btnUpdateClose', class: 'btnInfo', type: 'button' });
+    const liUpdateSix = createElements({ node: 'li' });
+    const btnUpdateSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnUpdateSave', class: 'btnInfo', type: 'button' });
+    const btnUpdateClose = createElements({ node: 'button', text: 'Close', id: 'btnUpdateClose', class: 'btnInfo', type: 'button' });
 
-    liInfoSix.appendChild(btnInfoSave);
-    liInfoSix.appendChild(btnInfoClose);
-    ulInfoDiv.appendChild(liInfoSix);
+    liUpdateSix.appendChild(btnUpdateSave);
+    liUpdateSix.appendChild(btnUpdateClose);
+    ulUpdate.appendChild(liUpdateSix);
 
-    mainInfoDiv.appendChild(ulInfoDiv);
+    mainUpdateDiv.appendChild(ulUpdate);
 
-    return mainInfoDiv
+    return mainUpdateDiv
 }
 
 const basicElementBody = () => {

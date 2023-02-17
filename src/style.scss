@@ -28,7 +28,7 @@ div.bookSubItems{
     pointer-events: none; // Avoid the child el being call when the event listener is in parent.
 }
 
-div#mainInfoDiv{
+div#mainUpdateDiv{
     border: 1px solid black;
 
     li{

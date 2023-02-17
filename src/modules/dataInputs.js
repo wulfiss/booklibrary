@@ -4,10 +4,10 @@ const UI = () => {
     const tableContent = document.querySelector('#tableContent');
     const tableMain = document.querySelector('#tableMain');
     const bookItems = document.querySelector('.bookItems');
-    const mainInfoDiv = document.querySelector('#mainInfoDiv');
+    const mainUpdateDiv = document.querySelector('#mainUpdateDiv');
 
     return {
-        body, main, tableMain, tableContent, bookItems, mainInfoDiv
+        body, main, tableMain, tableContent, bookItems, mainUpdateDiv
     }
 }
 
