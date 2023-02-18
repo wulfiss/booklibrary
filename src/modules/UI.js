@@ -201,6 +201,11 @@ const windowInfo = (indexBook) => {
     return mainUpdateDiv
 }
 
+const btnAdd = () => {
+    const btnAdd = createElements({ node: 'Button', type: 'button', id: 'btnAdd', text: 'Add', class: 'buttons' });
+    return btnAdd;
+}
+
 const basicElementBody = () => {
     const { body } = UI();
 
@@ -208,6 +213,7 @@ const basicElementBody = () => {
     const main = createElements({ node: 'main' });
     const footer = createElements({ node: 'footer' });
 
+    main.appendChild(btnAdd());
     main.appendChild(form());
     main.appendChild(bookTable());
 
