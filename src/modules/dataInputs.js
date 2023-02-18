@@ -27,9 +27,10 @@ const DATA = () => {
 const BTN = () => {
     const btnSave = document.querySelector('#btnSave');
     const btnCancel = document.querySelector('#btnCancel');
+    const btnAdd = document.querySelector('#btnAdd');
 
     return{
-        btnSave, btnCancel
+        btnSave, btnCancel, btnAdd
     }
 }
 
