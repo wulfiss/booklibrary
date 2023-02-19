@@ -86,13 +86,17 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
 
 }
 
-const btnAdd = function openFormForAddingANewBook(){
-    const { btnAdd } = BTN();
-    const { main } = UI();
+const btnGlobal = function readButtonForTheWholePage(){
+    const { body } = UI();
 
-    btnAdd.addEventListener('click', (e) => {
-        main.appendChild(form());
+    body.addEventListener('click', (e) => {
+        let target = e.target;
+        let data;
+
+        if(target.nodeName === 'BUTTON' && target.id === 'btnAdd'){
+            console.log(1);
+        }
     })
 }
 
-export{ btnForm, clickOnBook, btnAdd };
+export{ btnForm, clickOnBook, btnGlobal };

@@ -1,11 +1,11 @@
 import 'normalize.css';
 import './style.scss';
 import { basicElementBody } from './modules/UI';
-import { btnForm, clickOnBook, btnAdd } from './modules/operations';
+import { btnForm, clickOnBook, btnGlobal } from './modules/operations';
 
 
 basicElementBody();
-btnAdd();
+btnGlobal();
 btnForm();
 clickOnBook();
 
