@@ -1,5 +1,5 @@
 import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE } from "./dataInputs";
-import { showTableContent, windowInfo } from "./UI";
+import { showTableContent, windowInfo, form } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
     return{ title, author, startDate, finishDate, status }
@@ -86,4 +86,13 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
 
 }
 
-export{ btnForm, clickOnBook };
+const btnAdd = function openFormForAddingANewBook(){
+    const { btnAdd } = BTN();
+    const { main } = UI();
+
+    btnAdd.addEventListener('click', (e) => {
+        main.appendChild(form());
+    })
+}
+
+export{ btnForm, clickOnBook, btnAdd };

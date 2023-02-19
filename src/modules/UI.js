@@ -214,7 +214,7 @@ const basicElementBody = () => {
     const footer = createElements({ node: 'footer' });
 
     main.appendChild(btnAdd());
-    main.appendChild(form());
+    /* main.appendChild(form()); */
     main.appendChild(bookTable());
 
 
@@ -225,4 +225,4 @@ const basicElementBody = () => {
     return body;
 }
 
-export { basicElementBody, showTableContent, windowInfo };
+export { basicElementBody, showTableContent, windowInfo, form };
