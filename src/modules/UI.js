@@ -63,8 +63,8 @@ const form = function CreateAFormForAddTheBook(){
     /************************ create select element in form  ************************/
 
     const liFormBtn = createElements({ node: 'li' });
-    const btnFormSave = createElements({ node: 'button', text: 'Save', id: 'btnSave', class: 'buttons', type: 'button' });
-    const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button' });
+    const btnFormSave = createElements({ node: 'button', text: 'Save', id: 'btnSave', class: 'buttons', type: 'button', 'data-key': 'btnFormSave' });
+    const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button', 'data-key': 'btnFormCancel' });
     liFormBtn.appendChild(btnFormSave);
     liFormBtn.appendChild(btnFormCancel);
 
@@ -202,7 +202,7 @@ const windowInfo = (indexBook) => {
 }
 
 const btnAdd = () => {
-    const btnAdd = createElements({ node: 'Button', type: 'button', id: 'btnAdd', text: 'Add', class: 'buttons' });
+    const btnAdd = createElements({ node: 'Button', type: 'button', id: 'btnAdd', text: 'Add', class: 'buttons', 'data-key': 'btnAdd' });
     return btnAdd;
 }
 
