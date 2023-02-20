@@ -1,4 +1,4 @@
-import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE } from "./dataInputs";
+import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE, arr } from "./dataInputs";
 import { showTableContent, windowInfo, form } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
@@ -6,7 +6,7 @@ const Books = (title, author, startDate, finishDate, status) => {
 }
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
-    let { arrBooks } = DATA();
+    let { arrBooks } = arr();
 
     if(!arrBooks){arrBooks = [];}
     arrBooks.push(book);
@@ -32,10 +32,9 @@ const updateBookTable = () => {
     })
 };
  */
-const removeMainDiv = function checkIfMainAlreadyExistAndDeletesIt(){
-    const { mainUpdateDiv } = UI();
-    if(mainUpdateDiv){
-        mainUpdateDiv.remove();
+const removeContainer = function checkIfDivAlreadyExistAndDeletesIt(container){
+    if(document.querySelector(`#${container}`)){
+        document.querySelector(`#${container}`).remove();
     }
 }
 
@@ -43,7 +42,7 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     const { tableContent, main } = UI();
 
     tableContent.addEventListener('dblclick', (e) => {
-        removeMainDiv();
+        removeContainer('mainUpdateDiv');
         main.appendChild(windowInfo(e.target.dataset.book));
         updateBookInfo(e.target.dataset.book);
     })
@@ -53,7 +52,7 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
     const { mainUpdateDiv } = UI();
 
     const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
-        let { arrBooks } = DATA();
+        let { arrBooks } = arr();
 
         arrBooks[index].title = title;
         arrBooks[index].author = author;
@@ -75,10 +74,10 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
                 const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DATAUPDATE();
                 updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate,updateStatus, indexBook);
                 updateBookTable();
+                /* removeMainDiv(); */
+            }/* else if(target.id === 'btnUpdateClose'){
                 removeMainDiv();
-            }else if(target.id === 'btnUpdateClose'){
-                removeMainDiv();
-            }
+            } */
         }
 
         clickOnBook();
@@ -108,4 +107,4 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
     })
 }
  */
-export{ /* btnForm, */ clickOnBook /* btnGlobal */, Books, arrToJson, updateBookTable };
+export{ /* btnForm, */ clickOnBook /* btnGlobal */, Books, arrToJson, updateBookTable, removeContainer };

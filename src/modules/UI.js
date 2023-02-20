@@ -1,4 +1,4 @@
-import { UI, DATA } from "./dataInputs";
+import { UI, DATA, arr } from "./dataInputs";
 
 //node is the element that is going to be created so ex: node: 'div', the fallback is always to div, then 'text' is for create textNode
 const createElements = function littleHelperForCreatingHtmlElements(el){
@@ -63,8 +63,8 @@ const form = function CreateAFormForAddTheBook(){
     /************************ create select element in form  ************************/
 
     const liFormBtn = createElements({ node: 'li' });
-    const btnFormSave = createElements({ node: 'button', text: 'Save', id: 'btnSave', class: 'buttons', type: 'button', 'data-key': 'btnFormSave' });
-    const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button', 'data-key': 'btnFormCancel' });
+    const btnFormSave = createElements({ node: 'button', text: 'Save', id: 'btnSave', class: 'buttons', type: 'button', 'data-btn': 'btnFormSave' });
+    const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button', 'data-btn': 'btnFormCancel' });
     liFormBtn.appendChild(btnFormSave);
     liFormBtn.appendChild(btnFormCancel);
 
@@ -136,7 +136,7 @@ const bookTable = () => {
 }
 
 const windowInfo = (indexBook) => {
-    const { arrBooks } = DATA();
+    const { arrBooks } = arr();
     const mainUpdateDiv = createElements({ node: 'div', id: 'mainUpdateDiv' });
 
     const ulUpdate = createElements({ node: 'ul' });
@@ -189,8 +189,8 @@ const windowInfo = (indexBook) => {
     ulUpdate.appendChild(liUpdateFive);
 
     const liUpdateSix = createElements({ node: 'li' });
-    const btnUpdateSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnUpdateSave', class: 'btnInfo', type: 'button' });
-    const btnUpdateClose = createElements({ node: 'button', text: 'Close', id: 'btnUpdateClose', class: 'btnInfo', type: 'button' });
+    const btnUpdateSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnUpdateSave', class: 'btnInfo', type: 'button', 'data-btn': 'btnUpdateSave' });
+    const btnUpdateClose = createElements({ node: 'button', text: 'Close', id: 'btnUpdateClose', class: 'btnInfo', type: 'button', 'data-btn': 'btnUpdateClose' });
 
     liUpdateSix.appendChild(btnUpdateSave);
     liUpdateSix.appendChild(btnUpdateClose);

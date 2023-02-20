@@ -1,5 +1,5 @@
 import { DATA, UI } from "./dataInputs";
-import { Books, arrToJson, updateBookTable, clickOnBook } from "./operations";
+import { Books, arrToJson, updateBookTable, clickOnBook, removeContainer } from "./operations";
 import { form } from "./UI";
 
 const functionMap = {
@@ -12,6 +12,9 @@ const functionMap = {
         arrToJson(Books(title, author, startDate, finishDate, status));
         updateBookTable();
         clickOnBook();
+    },
+    btnUpdateClose: function(e){
+        removeContainer('mainUpdateDiv');
     }
 }
 
@@ -22,7 +25,7 @@ const btnGlobal = function readButtonForTheWholePage(){
         let target = e.target;
         let data;
         if(target.nodeName === 'BUTTON'){
-            functionMap[target.dataset.key](e);
+            functionMap[target.dataset.btn](e);
         }
     })
 }

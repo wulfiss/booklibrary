@@ -11,8 +11,15 @@ const UI = () => {
     }
 }
 
-const DATA = () => {
+const arr = () => {
     const arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
+    return {
+        arrBooks
+    };
+}
+
+const DATA = () => {
+
     const title = document.querySelector('#nameBook').value;
     const author = document.querySelector('#authorBook').value;
     const startDate = document.querySelector('#initialDate').value;
@@ -20,7 +27,7 @@ const DATA = () => {
     const status = document.querySelector('#statusBook').value;
 
     return{
-        arrBooks, title, author, startDate, finishDate, status
+        title, author, startDate, finishDate, status
     }
 }
 
@@ -54,4 +61,4 @@ const BTNUPDATE = () => {
     }
 }
 
-export { UI, DATA, BTN, DATAUPDATE, BTNUPDATE };
+export { UI, DATA, BTN, DATAUPDATE, BTNUPDATE, arr };
