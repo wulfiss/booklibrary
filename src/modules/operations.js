@@ -86,7 +86,7 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
 
 }
 
-const btnGlobal = function readButtonForTheWholePage(){
+/* const btnGlobal = function readButtonForTheWholePage(){
     const { body, main } = UI();
 
     body.addEventListener('click', (e) => {
@@ -107,5 +107,5 @@ const btnGlobal = function readButtonForTheWholePage(){
         }
     })
 }
-
-export{ /* btnForm, */ clickOnBook, btnGlobal };
+ */
+export{ /* btnForm, */ clickOnBook /* btnGlobal */, Books, arrToJson, updateBookTable };
