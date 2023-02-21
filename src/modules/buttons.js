@@ -13,6 +13,9 @@ const functionMap = {
         updateBookTable();
         clickOnBook();
     },
+    btnFormCancel: function (e){
+        removeContainer('addBookForm');
+    },
     btnUpdateClose: function(e){
         removeContainer('mainUpdateDiv');
     }

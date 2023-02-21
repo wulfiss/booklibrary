@@ -21,17 +21,6 @@ const updateBookTable = () => {
     tableMain.appendChild(showTableContent());
 }
 
-/* const btnForm = function giveFunctionsToBtnSaveAndCancelFromForm (){
-    const { btnSave, btnCancel } = BTN();
-
-    btnSave.addEventListener('click', (e) => {
-        const { title, author, startDate, finishDate, status } = DATA();
-        arrToJson(Books(title, author, startDate, finishDate, status));
-        updateBookTable();
-        clickOnBook();
-    })
-};
- */
 const removeContainer = function checkIfDivAlreadyExistAndDeletesIt(container){
     if(document.querySelector(`#${container}`)){
         document.querySelector(`#${container}`).remove();
@@ -85,26 +74,4 @@ const updateBookInfo = function editBookInfoWhenEdit(indexBook){
 
 }
 
-/* const btnGlobal = function readButtonForTheWholePage(){
-    const { body, main } = UI();
-
-    body.addEventListener('click', (e) => {
-        let target = e.target;
-        let data;
-
-        if(target.nodeName === 'BUTTON'){
-            if(target.id === 'btnAdd'){
-                main.appendChild(form());
-            }
-
-            if(target.id === 'btnSave'){
-                const { title, author, startDate, finishDate, status } = DATA();
-                arrToJson(Books(title, author, startDate, finishDate, status));
-                updateBookTable();
-                clickOnBook();
-            }
-        }
-    })
-}
- */
 export{ /* btnForm, */ clickOnBook /* btnGlobal */, Books, arrToJson, updateBookTable, removeContainer };

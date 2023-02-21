@@ -20,7 +20,7 @@ const createElements = function littleHelperForCreatingHtmlElements(el){
 }
 
 const form = function CreateAFormForAddTheBook(){
-    const fieldset = createElements({ node: 'fieldset' });
+    const fieldset = createElements({ node: 'fieldset', id: 'addBookForm' });
     const legend = createElements({ node: 'legend', text: 'Book' });
 
     const form = createElements({ node:'form' });
@@ -76,7 +76,6 @@ const form = function CreateAFormForAddTheBook(){
     ulForm.appendChild(liFormBtn);
 
     form.appendChild(ulForm);
-
 
     fieldset.appendChild(legend);
     fieldset.appendChild(form);
@@ -214,9 +213,7 @@ const basicElementBody = () => {
     const footer = createElements({ node: 'footer' });
 
     main.appendChild(btnAdd());
-    /* main.appendChild(form()); */
     main.appendChild(bookTable());
-
 
     body.appendChild(header);
     body.appendChild(main);
