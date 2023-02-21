@@ -1,5 +1,5 @@
-import { BTN, DATA, UI, DATAUPDATE, BTNUPDATE, arr } from "./dataInputs";
-import { showTableContent, windowInfo, form } from "./UI";
+import { UI, arr } from "./dataInputs";
+import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
     return{ title, author, startDate, finishDate, status }
@@ -33,45 +33,22 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
     tableContent.addEventListener('dblclick', (e) => {
         removeContainer('mainUpdateDiv');
         main.appendChild(windowInfo(e.target.dataset.book));
-        updateBookInfo(e.target.dataset.book);
     })
 }
 
-const updateBookInfo = function editBookInfoWhenEdit(indexBook){
-    const { mainUpdateDiv } = UI();
+const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
+    let { arrBooks } = arr();
 
-    const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
-        let { arrBooks } = arr();
+    arrBooks[index].title = title;
+    arrBooks[index].author = author;
+    arrBooks[index].startDate = startDate;
+    arrBooks[index].finishDate = finishDate;
+    arrBooks[index].status = status;
 
-        arrBooks[index].title = title;
-        arrBooks[index].author = author;
-        arrBooks[index].startDate = startDate;
-        arrBooks[index].finishDate = finishDate;
-        arrBooks[index].status = status;
-
-        if(!arrBooks){arrBooks = [];}
-        localStorage.clear();
-        return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
-
-    }
-
-    mainUpdateDiv.addEventListener('click', (e) => {
-        let target = e.target;
-
-        if(target.nodeName === 'BUTTON'){
-            if(target.id === 'btnUpdateSave'){
-                const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DATAUPDATE();
-                updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate,updateStatus, indexBook);
-                updateBookTable();
-                /* removeMainDiv(); */
-            }/* else if(target.id === 'btnUpdateClose'){
-                removeMainDiv();
-            } */
-        }
-
-        clickOnBook();
-    })
-
+    if(!arrBooks){arrBooks = [];}
+    localStorage.clear();
+    return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
-export{ /* btnForm, */ clickOnBook /* btnGlobal */, Books, arrToJson, updateBookTable, removeContainer };
+
+export{ clickOnBook, Books, arrToJson, updateBookTable, removeContainer, updateBookArr };

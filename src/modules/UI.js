@@ -136,7 +136,7 @@ const bookTable = () => {
 
 const windowInfo = (indexBook) => {
     const { arrBooks } = arr();
-    const mainUpdateDiv = createElements({ node: 'div', id: 'mainUpdateDiv' });
+    const mainUpdateDiv = createElements({ node: 'div', id: 'mainUpdateDiv', 'data-key': indexBook });
 
     const ulUpdate = createElements({ node: 'ul' });
 
