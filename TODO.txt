@@ -1,2 +1,3 @@
 add delete function
-fallback for error when there is a null in the localStorage;
+remove and add btn add when form is open
+add some ui 
