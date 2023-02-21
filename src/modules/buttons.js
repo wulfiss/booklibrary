@@ -1,4 +1,4 @@
-import { DATA, UI, DATAUPDATE } from "./dataInputs";
+import { DATA, UI, DataUpdate } from "./dataInputs";
 import { Books, arrToJson, updateBookTable, clickOnBook, removeContainer, updateBookArr } from "./operations";
 import { form } from "./UI";
 
@@ -18,7 +18,7 @@ const functionMap = {
     },
     btnUpdateSave: function(e){
         const { mainUpdateDiv } = UI();
-        const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DATAUPDATE();
+        const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DataUpdate();
         updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate,updateStatus, mainUpdateDiv.dataset.key);
         updateBookTable();
         clickOnBook();

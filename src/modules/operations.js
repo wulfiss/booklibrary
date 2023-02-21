@@ -1,4 +1,4 @@
-import { UI, arr } from "./dataInputs";
+import { UI, Arr } from "./dataInputs";
 import { showTableContent, windowInfo } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
@@ -6,7 +6,7 @@ const Books = (title, author, startDate, finishDate, status) => {
 }
 
 const arrToJson = function checkIfTheArrExistInTheLocalStorageAndPushNewBookIfNotCreateANewOne(book){
-    let { arrBooks } = arr();
+    let { arrBooks } = Arr();
 
     if(!arrBooks){arrBooks = [];}
     arrBooks.push(book);
@@ -37,7 +37,7 @@ const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
 }
 
 const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
-    let { arrBooks } = arr();
+    let { arrBooks } = Arr();
 
     arrBooks[index].title = title;
     arrBooks[index].author = author;

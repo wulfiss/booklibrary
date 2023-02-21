@@ -11,7 +11,7 @@ const UI = () => {
     }
 }
 
-const arr = () => {
+const Arr = () => {
     const arrBooks = JSON.parse(localStorage.getItem('arrBooks'));
     return {
         arrBooks
@@ -41,7 +41,7 @@ const BTN = () => {
     }
 }
 
-const DATAUPDATE = () => {
+const DataUpdate = () => {
     const updateTitle = document.querySelector('#titleUpdate').value;
     const updateAuthor = document.querySelector('#authorUpdate').value;
     const updateStartDate = document.querySelector('#startUpdate').value;
@@ -53,12 +53,4 @@ const DATAUPDATE = () => {
     }
 }
 
-const BTNUPDATE = () => {
-    const btnInfoSave = document.querySelector('#btnUpdateSave');
-
-    return{
-        btnInfoSave
-    }
-}
-
-export { UI, DATA, BTN, DATAUPDATE, BTNUPDATE, arr };
+export { UI, DATA, BTN, DataUpdate, Arr };

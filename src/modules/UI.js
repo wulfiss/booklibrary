@@ -1,4 +1,4 @@
-import { UI, DATA, arr } from "./dataInputs";
+import { UI, DATA, Arr } from "./dataInputs";
 
 //node is the element that is going to be created so ex: node: 'div', the fallback is always to div, then 'text' is for create textNode
 const createElements = function littleHelperForCreatingHtmlElements(el){
@@ -135,7 +135,7 @@ const bookTable = () => {
 }
 
 const windowInfo = (indexBook) => {
-    const { arrBooks } = arr();
+    const { arrBooks } = Arr();
     const mainUpdateDiv = createElements({ node: 'div', id: 'mainUpdateDiv', 'data-key': indexBook });
 
     const ulUpdate = createElements({ node: 'ul' });
