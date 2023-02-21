@@ -202,7 +202,7 @@ const windowInfo = (indexBook) => {
 }
 
 const btnAdd = () => {
-    const btnAdd = createElements({ node: 'Button', type: 'button', id: 'btnAdd', text: 'Add', class: 'buttons', 'data-key': 'btnAdd' });
+    const btnAdd = createElements({ node: 'Button', type: 'button', id: 'btnAdd', text: 'Add', class: 'buttons', 'data-btn': 'btnAdd' });
     return btnAdd;
 }
 
