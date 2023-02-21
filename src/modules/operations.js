@@ -50,5 +50,4 @@ const updateBookArr = function updateBookArr(title, author, startDate, finishDat
     return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
-
 export{ clickOnBook, Books, arrToJson, updateBookTable, removeContainer, updateBookArr };

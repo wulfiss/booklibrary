@@ -222,4 +222,4 @@ const basicElementBody = () => {
     return body;
 }
 
-export { basicElementBody, showTableContent, windowInfo, form };
+export { basicElementBody, showTableContent, windowInfo, form, btnAdd };
