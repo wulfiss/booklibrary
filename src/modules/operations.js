@@ -50,4 +50,10 @@ const updateBookArr = function updateBookArr(title, author, startDate, finishDat
     return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
-export{ clickOnBook, Books, arrToJson, updateBookTable, removeContainer, updateBookArr };
+const deleteBooks = function deleteBooksFormArray(index){
+    let { arrBooks } = Arr();
+    arrBooks.splice(index, 1);
+    return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
+}
+
+export{ clickOnBook, Books, arrToJson, updateBookTable, removeContainer, updateBookArr, deleteBooks };
