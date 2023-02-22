@@ -14,6 +14,10 @@ div#tableHeader{
     grid-template-columns: repeat(6, 1fr);
 }
 
+div.subItemButtons{
+    visibility: hidden;
+}
+
 div.bookItems{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -22,6 +26,12 @@ div.bookItems{
         background-color: rgba(70, 107, 226, 0.459);
         border: 1px solid #000;
     }
+
+    &:hover > div.subItemButtons,
+    &:focus > div.subItemButtons{
+        visibility: visible;
+    }
+
 }
 
 div.bookSubItems{
