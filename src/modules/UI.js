@@ -98,7 +98,7 @@ const showTableContent = () => {
             const bookItemFinishDate = createElements({ node: 'div', text: arrBooks[i]['finishDate'], id: 'bookItemFinishDate', class: 'bookSubItems' });
             const bookItemStatus = createElements({ node: 'div', text: arrBooks[i]['status'], id: 'bookItemStatus', class: 'bookSubItems' });
 
-            const bookItemBTN = createElements({ node: 'div', id: 'bookItemBTN', class: 'bookSubItems subItemButtons' });
+            const bookItemBTN = createElements({ node: 'div', id: 'bookItemBTN', class: 'subItemButtons' });
             const btnDelete = createElements({ node: 'button', type: 'button', id: 'btnDelete', class: 'buttons', text: 'Delete', 'data-book': i, 'data-btn': 'btnDelete' });
             const btnEdit = createElements({ node: 'button', type: 'button', id: 'btnEdit', class: 'buttons', text: 'Edit', 'data-book': i, 'data-btn': 'btnEdit' });
 
