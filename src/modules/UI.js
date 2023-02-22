@@ -97,13 +97,14 @@ const showTableContent = () => {
             const bookItemStartDate = createElements({ node: 'div', text: arrBooks[i]['startDate'], id: 'bookItemStartDate', class: 'bookSubItems' });
             const bookItemFinishDate = createElements({ node: 'div', text: arrBooks[i]['finishDate'], id: 'bookItemFinishDate', class: 'bookSubItems' });
             const bookItemStatus = createElements({ node: 'div', text: arrBooks[i]['status'], id: 'bookItemStatus', class: 'bookSubItems' });
+            const btnDelete = createElements({ node: 'button', type: 'button', id: 'btnDelete', class: 'buttons', text: 'Delete', 'data-book': i, 'data-btn': 'btnDelete' });
 
             bookItem.appendChild(bookItemTitle);
             bookItem.appendChild(bookItemAuthor);
             bookItem.appendChild(bookItemStatus);
             bookItem.appendChild(bookItemStartDate);
             bookItem.appendChild(bookItemFinishDate);
-
+            bookItem.appendChild(btnDelete);
             content.appendChild(bookItem);
         }
     }

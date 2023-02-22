@@ -26,6 +26,9 @@ const functionMap = {
     },
     btnUpdateClose: function(e){
         removeContainer('mainUpdateDiv');
+    },
+    btnDelete: function(e){
+        console.log(1);
     }
 }
 
