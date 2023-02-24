@@ -1,3 +1,26 @@
+%svgBtn{
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 5px;
+
+    &:hover, &:focus{
+        background-color: rgba(70, 107, 226, 0.459);
+    }
+
+    &:active{
+        transform: translateY(1px);
+    }
+}
+
+%input{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,15 +31,35 @@ li{
     list-style: none;
 }
 
-
 div#tableHeader{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+
+    .headerItems{
+        border: 1px solid black;
+        text-align: center;
+    }
 }
 
+/**/
 div.subItemButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
     visibility: hidden;
 }
+
+#btnEdit{
+    @extend %svgBtn;
+    background-image: url(./img/BTN-Edit.svg);
+}
+
+#btnDelete{
+    @extend %svgBtn;
+    background-image: url(./img/BTN-Delete.svg);
+}
+
+/**/
 
 div.bookItems{
     display: grid;
@@ -30,6 +73,10 @@ div.bookItems{
     &:hover > div.subItemButtons,
     &:focus > div.subItemButtons{
         visibility: visible;
+    }
+
+    .btnSubItem{
+        
     }
 
 }
@@ -50,11 +97,6 @@ div#mainUpdateDiv{
 
 /* ******************FORM********************* */
 // for the option to be gray as the place holders in the form
-%input{
-    width: 200px;
-    height: 30px;
-    padding: 5px;
-}
 
 select{
     @extend %input;
@@ -87,3 +129,5 @@ input[type = 'text']{
 }
 
 /* ******************FORM********************* */
+
+
