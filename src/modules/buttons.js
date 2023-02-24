@@ -7,6 +7,8 @@ const functionMap = {
         if(!document.getElementById('addBookForm')){
             const { main } = UI();
             main.appendChild(form());
+        }else{
+            document.getElementById('addBookForm').remove();
         }
     },
     btnFormSave: function(e){
@@ -33,12 +35,11 @@ const functionMap = {
     btnDelete: function(e){
         deleteBooks(e.target.dataset.book);
         updateBookTable();
-        console.log(1);
     }
 }
 
 const btnGlobal = function readButtonForTheWholePage(){
-    const { body, main } = UI();
+    const { body } = UI();
 
     body.addEventListener('click', (e) => {
         let target = e.target;
