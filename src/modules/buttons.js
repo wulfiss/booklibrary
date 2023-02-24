@@ -4,8 +4,10 @@ import { form } from "./UI";
 
 const functionMap = {
     btnAdd: function(e){
-        const { main } = UI();
-        main.appendChild(form());
+        if(!document.getElementById('addBookForm')){
+            const { main } = UI();
+            main.appendChild(form());
+        }
     },
     btnFormSave: function(e){
         const { title, author, startDate, finishDate, status } = DATA();
