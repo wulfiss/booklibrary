@@ -63,10 +63,10 @@ const form = function CreateAFormForAddTheBook(){
     /************************ create select element in form  ************************/
 
     const liFormBtn = createElements({ node: 'li' });
-    const btnFormSave = createElements({ node: 'button', text: 'Save', id: 'btnSave', class: 'buttons', type: 'button', 'data-btn': 'btnFormSave' });
-    const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button', 'data-btn': 'btnFormCancel' });
+    const btnFormSave = createElements({ node: 'button', text: 'Save and Close', id: 'btnSave', class: 'buttons', type: 'button', 'data-btn': 'btnFormSave' });
+    /* const btnFormCancel = createElements({ node: 'button', text: 'Cancel', id: 'btnCancel', class: 'buttons', type: 'button', 'data-btn': 'btnFormCancel' }); */
     liFormBtn.appendChild(btnFormSave);
-    liFormBtn.appendChild(btnFormCancel);
+    /* liFormBtn.appendChild(btnFormCancel); */
 
     ulForm.appendChild(liFormOne);
     ulForm.appendChild(liFormTwo);
