@@ -102,8 +102,8 @@ const showTableContent = () => {
             const btnDelete = createElements({ node: 'button', type: 'button', id: 'btnDelete', class: 'buttons', text: 'Delete', 'data-book': i, 'data-btn': 'btnDelete' });
             const btnEdit = createElements({ node: 'button', type: 'button', id: 'btnEdit', class: 'buttons', text: 'Edit', 'data-book': i, 'data-btn': 'btnEdit' });
 
-            bookItemBTN.appendChild(btnDelete);
             bookItemBTN.appendChild(btnEdit);
+            bookItemBTN.appendChild(btnDelete);
 
             bookItem.appendChild(bookItemTitle);
             bookItem.appendChild(bookItemAuthor);

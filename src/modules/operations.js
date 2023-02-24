@@ -27,15 +27,6 @@ const removeContainer = function checkIfDivAlreadyExistAndDeletesIt(container){
     }
 }
 
-const clickOnBook = function openTheAWindowForEditingInfoOfBook(){
-    const { tableContent, main } = UI();
-
-    tableContent.addEventListener('dblclick', (e) => {
-        removeContainer('mainUpdateDiv');
-        main.appendChild(windowInfo(e.target.dataset.book));
-    })
-}
-
 const updateBookArr = function updateBookArr(title, author, startDate, finishDate, status, index){
     let { arrBooks } = Arr();
 
@@ -56,4 +47,4 @@ const deleteBooks = function deleteBooksFormArray(index){
     return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
-export{ clickOnBook, Books, arrToJson, updateBookTable, removeContainer, updateBookArr, deleteBooks };
+export{ Books, arrToJson, updateBookTable, removeContainer, updateBookArr, deleteBooks, windowInfo };

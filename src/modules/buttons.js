@@ -1,5 +1,5 @@
 import { DATA, UI, DataUpdate } from "./dataInputs";
-import { Books, arrToJson, updateBookTable, clickOnBook, removeContainer, updateBookArr, deleteBooks } from "./operations";
+import { Books, arrToJson, updateBookTable, /* clickOnBook, */ removeContainer, updateBookArr, deleteBooks, windowInfo } from "./operations";
 import { form } from "./UI";
 
 const functionMap = {
@@ -15,7 +15,6 @@ const functionMap = {
         const { title, author, startDate, finishDate, status } = DATA();
         arrToJson(Books(title, author, startDate, finishDate, status));
         updateBookTable();
-        clickOnBook();
         removeContainer('addBookForm');
     },
     btnFormCancel: function (e){
@@ -26,7 +25,6 @@ const functionMap = {
         const { updateTitle, updateAuthor, updateStartDate, updateFinishDate, updateStatus } = DataUpdate();
         updateBookArr(updateTitle, updateAuthor, updateStartDate, updateFinishDate,updateStatus, mainUpdateDiv.dataset.key);
         updateBookTable();
-        clickOnBook();
         removeContainer('mainUpdateDiv');
     },
     btnUpdateClose: function(e){
@@ -35,6 +33,11 @@ const functionMap = {
     btnDelete: function(e){
         deleteBooks(e.target.dataset.book);
         updateBookTable();
+    },
+    btnEdit: function(e){
+        const { main } = UI();
+        removeContainer('mainUpdateDiv');
+        main.appendChild(windowInfo(e.target.dataset.book));
     }
 }
 

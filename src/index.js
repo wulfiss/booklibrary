@@ -8,6 +8,6 @@ import { btnGlobal } from './modules/buttons';
 basicElementBody();
 btnGlobal();
 /* btnForm(); */
-clickOnBook();
+/* clickOnBook(); */
 
 console.log('This take a lot of timeeeee!!!!');
