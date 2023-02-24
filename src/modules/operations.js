@@ -1,5 +1,5 @@
 import { UI, Arr } from "./dataInputs";
-import { showTableContent, windowInfo } from "./UI";
+import { showTableContent, windowInfo, form } from "./UI";
 
 const Books = (title, author, startDate, finishDate, status) => {
     return{ title, author, startDate, finishDate, status }
@@ -47,4 +47,15 @@ const deleteBooks = function deleteBooksFormArray(index){
     return localStorage.setItem('arrBooks', JSON.stringify(arrBooks));
 }
 
-export{ Books, arrToJson, updateBookTable, removeContainer, updateBookArr, deleteBooks, windowInfo };
+const addBtnFunction = function functionsOfBtnAddWhenClick(target){
+    if(!document.getElementById('addBookForm')){
+        const { main } = UI();
+        main.appendChild(form());
+        target.textContent = 'Cancel';
+    }else{
+        document.getElementById('addBookForm').remove();
+        target.textContent = 'Add';
+    }
+}
+
+export{ Books, arrToJson, updateBookTable, removeContainer, updateBookArr, deleteBooks, windowInfo, addBtnFunction };

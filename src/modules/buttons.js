@@ -1,17 +1,18 @@
 import { DATA, UI, DataUpdate } from "./dataInputs";
-import { Books, arrToJson, updateBookTable, /* clickOnBook, */ removeContainer, updateBookArr, deleteBooks, windowInfo } from "./operations";
+import { Books, arrToJson, updateBookTable, addBtnFunction, removeContainer, updateBookArr, deleteBooks, windowInfo } from "./operations";
 import { form } from "./UI";
 
 const functionMap = {
     btnAdd: function(e){
-        if(!document.getElementById('addBookForm')){
+        /*         if(!document.getElementById('addBookForm')){
             const { main } = UI();
             main.appendChild(form());
             e.target.textContent = 'Cancel';
         }else{
             document.getElementById('addBookForm').remove();
             e.target.textContent = 'Add';
-        }
+        } */
+        addBtnFunction(e.target);
     },
     btnFormSave: function(e){
         const { title, author, startDate, finishDate, status } = DATA();
