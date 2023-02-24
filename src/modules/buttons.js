@@ -7,8 +7,10 @@ const functionMap = {
         if(!document.getElementById('addBookForm')){
             const { main } = UI();
             main.appendChild(form());
+            e.target.textContent = 'Cancel';
         }else{
             document.getElementById('addBookForm').remove();
+            e.target.textContent = 'Add';
         }
     },
     btnFormSave: function(e){
